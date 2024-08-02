@@ -1,0 +1,6 @@
+@Projet_DotNet_P6_LJMA_HostAddress = http://localhost:5101
+
+GET {{Projet_DotNet_P6_LJMA_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
