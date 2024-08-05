@@ -7,11 +7,11 @@ L'objectif est de développer un nouveau site web pour remplacer l'actuel site "
 
 Création d'une branche feature front :
 
-    feat/front/nom_feature_front
+    feat/front/nom_ticket
 
 Création d'une branche feature back :
 
-    feat/back/nom_feature_back
+    feat/back/nom_ticket
 
 ### Nommage des fichiers
 
