@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// Cette classe représente l'entité Vlog de la BDD.
@@ -18,7 +18,7 @@ namespace Projet_DotNet_P6_LJMA.Models
 		[StringLength(2000)]
 		public string url_video { get; set; }
 		[Required]
-        [StringLength(2000)]
+		[StringLength(2000)]
         public string desc_video { get; set; }
 
 	}
