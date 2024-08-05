@@ -2,6 +2,9 @@
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
+    /// <summary>
+    /// La Classe Utilisateur est l'entité Utilisateur de ma base de données
+    /// </summary>
     public class Utilisateur
     {
         [Key]
