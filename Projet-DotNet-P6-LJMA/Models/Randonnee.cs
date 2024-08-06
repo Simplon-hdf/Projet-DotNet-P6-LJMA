@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-/// <summary>
-/// Cette classe représente l'entité Randonnee de la BDD.
-/// </summary>
+
 namespace Projet_DotNet_P6_LJMA.Models
 {
+    /// <summary>
+    /// Cette classe représente l'entité Randonnee de la BDD.
+    /// </summary>
     public class Randonnee
     {
         [Key]
