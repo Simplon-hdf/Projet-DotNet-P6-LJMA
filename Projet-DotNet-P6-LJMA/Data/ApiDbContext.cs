@@ -21,12 +21,36 @@ public class ApiDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Utilisateur>().ToTable("Utilisateur");
         modelBuilder.Entity<Theme>().ToTable("Theme");
-        modelBuilder.Entity<Session>().ToTable("Session");
-        modelBuilder.Entity<Reserver>().ToTable("Reserver");
         modelBuilder.Entity<Post_philo>().ToTable("Post_Philos");
         modelBuilder.Entity<Randonnee>().ToTable("Randonnee");
-        modelBuilder.Entity<Utilisateur>().ToTable("Utilisateur");
         modelBuilder.Entity<Vlog>().ToTable("Vlog");
+        modelBuilder.Entity<Session>().ToTable("Session");
+        modelBuilder.Entity<Reserver>().ToTable("Reserver");
+
+
+        #region Relation des FOREIGN KEY
+
+        modelBuilder.Entity<Reserver>()
+            .HasOne(r => r.Session)
+            .WithMany()
+            .HasForeignKey(r => r.id_session);
+
+        modelBuilder.Entity<Reserver>()
+           .HasOne(r => r.Utilisateur)
+           .WithMany()
+           .HasForeignKey(r => r.id_utilisateur);
+
+        modelBuilder.Entity<Session>()
+            .HasOne(s => s.Theme)
+            .WithMany()
+            .HasForeignKey(s => s.id_theme);
+
+        modelBuilder.Entity<Session>()
+            .HasOne(s => s.Randonnee)
+            .WithMany()
+            .HasForeignKey(s => s.id_rando);
+        #endregion
     }
 }
