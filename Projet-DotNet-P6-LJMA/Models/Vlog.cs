@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
@@ -8,8 +9,9 @@ namespace Projet_DotNet_P6_LJMA.Models
 	public class Vlog
 	{
 		[Key]
-		[Required]
-		public int id_vlog { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
+		public Guid id_vlog { get; set; }
 		[Required]
 		[StringLength(50)]
 		public string? nom_video { get; set; }

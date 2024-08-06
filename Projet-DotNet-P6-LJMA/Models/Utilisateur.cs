@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
@@ -7,19 +8,18 @@ namespace Projet_DotNet_P6_LJMA.Models
     /// </summary>
     public class Utilisateur
     {
-        [Key]
-        [Required]
-        int id_utilisateur { get; set; }
+        [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid id_utilisateur { get; set; }
         [StringLength(40)]
-        string? prenom_utilisateur { get; set; }
+        public string? prenom_utilisateur { get; set; }
         [StringLength(40)]
-        string? nom_utilisateur { get; set; }
+        public string? nom_utilisateur { get; set; }
         [StringLength(20)]
-        string? telephone_utilisateur { get; set; }
+        public string? telephone_utilisateur { get; set; }
         [StringLength(255)]
-        string? mot_de_passe_utilisateur { get; set; }
+        public string? mot_de_passe_utilisateur { get; set; }
         [Required]
         [StringLength(320)]
-        string mail_utilisateur {  get; set; }
+        public string mail_utilisateur {  get; set; }
     }
 }
