@@ -7,8 +7,8 @@ public class Theme
 {
 	[Key]
 	[Required]
-	public int Id_theme { get; set; }
+	public int id_theme { get; set; }
 
 	[StringLength(50)]
-	public string? Nom_theme { get; set; }
+	public string? nom_theme { get; set; }
 }
