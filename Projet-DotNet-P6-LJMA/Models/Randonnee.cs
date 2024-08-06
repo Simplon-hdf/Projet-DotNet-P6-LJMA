@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace Projet_DotNet_P6_LJMA.Models
@@ -9,8 +10,9 @@ namespace Projet_DotNet_P6_LJMA.Models
     public class Randonnee
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
-        public int id_rando { get; set; }
+        public Guid id_rando { get; set; }
         [Required]
         public decimal prix_rando { get; set; }
         [Required]

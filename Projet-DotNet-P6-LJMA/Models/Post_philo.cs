@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace Projet_DotNet_P6_LJMA.Models
@@ -9,8 +10,9 @@ namespace Projet_DotNet_P6_LJMA.Models
     public class Post_philo
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
-        public int id_post {  get; set; }
+        public Guid id_post {  get; set; }
 
         public string? content_post { get; set; }
     }

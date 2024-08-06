@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
@@ -8,8 +9,9 @@ namespace Projet_DotNet_P6_LJMA.Models
 	public class Theme
 	{
 		[Key]
-		[Required]
-		public int id_theme { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
+		public Guid id_theme { get; set; }
 
 		[StringLength(50)]
 		public string? nom_theme { get; set; }
