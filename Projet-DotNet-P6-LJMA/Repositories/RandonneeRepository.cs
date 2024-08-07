@@ -4,10 +4,6 @@ using Projet_DotNet_P6_LJMA.Repositories.Interfaces;
 
 namespace Projet_DotNet_P6_LJMA.Repositories
 {
-
-    /// <summary>
-    /// Repository de la classe Randonnee.
-    /// </summary>
     public class RandonneeRepository : IRandonneeRepository
     {
         private readonly ApiDbContext _context;
