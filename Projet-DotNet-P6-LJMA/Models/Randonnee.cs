@@ -1,30 +1,27 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
-    /// <summary>
-    /// Cette classe représente l'entité Randonnee de la BDD.
-    /// </summary>
+    [Table("Randonnee")]
     public class Randonnee
     {
-        [Key]
-        [Required]
-        public int id_rando { get; set; }
-        [Required]
+        [Column("id"),Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required, MaxLength(36)]
+        public Guid id_rando { get; set; }
+        [Column("prix_rando"),Required]
         public decimal prix_rando { get; set; }
-        [Required]
+        [Column("desc_rando"),Required]
         public string desc_rando { get; set; }
-        [Required]
-        [StringLength(50)]
+        [Column("lieu_rando"), Required, MaxLength(50)]
         public string lieu_rando { get; set; }
-        [Required]
-        [StringLength(2000)]
+        [Column("image_rando"), Required, MaxLength(2000)]
         public string image_rando { get; set; }
+        [Column("nb_nuit_rando")]
         public int nb_nuit_rando { get; set; }
-        [Required]
+        [Column("nb_jour_rando"), Required]
         public int nb_jour_rando { get; set; }
-        [Required]
+        [Column("limite_participant"), Required]
         public int limite_participant { get; set; }
 
     }
