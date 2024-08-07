@@ -10,10 +10,10 @@ namespace Projet_DotNet_P6_LJMA.Repositories
         Task CreateAsync(Utilisateur utilisateur);
         Task UpdateAsync(Utilisateur utilisateur);
         Task DeleteAsync(string id);
-        Task<bool> ContactExists(string id);
+        Task<bool> UtilisateurExist(string id);
     }
 
-    public class UtilisateurRepository
+    public class UtilisateurRepository : IUtilisateurRepository
     {
         private readonly ApiDbContext _context;
 
@@ -28,18 +28,43 @@ namespace Projet_DotNet_P6_LJMA.Repositories
             _context = context;
         }
 
+        public async Task<bool> UtilisateurExist(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CreateAsync(Utilisateur utilisateur)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Récupere les utilisateurs en base de donnée
         /// </summary>
         /// <returns>
         /// Renvoie une collection d'utilisateurs en asynchrone de type IAsyncEnumerable<Utilisateur>
         /// </returns>
-        public async IAsyncEnumerable<Utilisateur> GetUtilisateursAsync()
+        public async IAsyncEnumerable<Utilisateur> GetAllAsync()
         {
             await foreach (Utilisateur utilisateur in _context.Utilisateurs)
             {
                 yield return utilisateur;
             }
+        }
+
+        public Task<Utilisateur> GetByIdAsync(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(Utilisateur utilisateur)
+        {
+            throw new NotImplementedException();
         }
     }
 }
