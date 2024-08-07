@@ -16,7 +16,7 @@ namespace Projet_DotNet_P6_LJMA.Models
 		public Guid id_utilisateur { get; set; }
         [Column("id_session"), ForeignKey("id_session"), Required]
 		public Guid id_session { get; set; }
-        [Column("id_participant"), Required]
+        [Column("nb_participant"), Required]
 		public int nb_participant {  get; set; }
 
         #region Liaison de models
