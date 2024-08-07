@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Projet_DotNet_P6_LJMA.Data;
-using Projet_DotNet_P6_LJMA.Repository;
+using Projet_DotNet_P6_LJMA.Repositories.Interfaces;
+using Projet_DotNet_P6_LJMA.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IReserverRepository, ReserverRepository>();
+builder.Services.AddScoped<IRandonneeRepository, RandonneeRepository>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
