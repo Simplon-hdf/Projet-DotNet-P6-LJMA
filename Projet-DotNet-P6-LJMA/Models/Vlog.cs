@@ -9,7 +9,9 @@ namespace Projet_DotNet_P6_LJMA.Models
 	[Table("Vlog")]
 	public class Vlog
 	{
-		[Column("id"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		[Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
 		public Guid id_vlog { get; set; }
 		[Column("nom_video"), Required, MaxLength(50)]
 		public string? nom_video { get; set; }
