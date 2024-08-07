@@ -4,9 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
-    /// <summary>
-    /// Cette classe représente l'entité Randonnee de la BDD.
-    /// </summary>
     [Table("Randonnee")]
     public class Randonnee
     {
