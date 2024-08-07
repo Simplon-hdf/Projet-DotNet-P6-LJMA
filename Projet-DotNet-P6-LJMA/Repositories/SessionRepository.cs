@@ -5,9 +5,9 @@ using Projet_DotNet_P6_LJMA.Repositories.Interfaces;
 namespace Projet_DotNet_P6_LJMA.Repositories
 
 {
-/// <summary>
-/// Repository de la classe Session.
-/// </summary>
+    /// <summary>
+    /// Repository de la classe Session.
+    /// </summary>
     public class SessionRepository : ISessionRepository
     {
         private readonly ApiDbContext _context;
