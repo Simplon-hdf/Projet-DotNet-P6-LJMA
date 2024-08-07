@@ -43,9 +43,9 @@ namespace Projet_DotNet_P6_LJMA.Repositories
         /// </summary>
         /// <param name="contact"></param>
         /// <returns></returns>
-        public async Task CreateAsync(Theme contact)
+        public async Task CreateAsync(Theme theme)
         {
-            _context.Add(contact);
+            _context.Add(theme);
             await _context.SaveChangesAsync();
         }
 
