@@ -16,15 +16,17 @@ namespace Projet_DotNet_P6_LJMA.Models
         [StringLength(50)]
         public string? nom_session { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime? date_debut_session { get; set; }
+        [Required]
+        public DateOnly date_debut_session { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime? date_fin_session { get; set; }
+        [Required]
+        public DateOnly date_fin_session { get; set; }
 
         [ForeignKey("Randonnee")]
+        [Required]
         public Guid id_rando { get; set; }
         [ForeignKey("Theme")]
+        [Required]
         public Guid id_theme { get; set; }
 
         #region Liaison de models
