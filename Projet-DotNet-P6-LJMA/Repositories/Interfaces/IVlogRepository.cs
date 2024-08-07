@@ -1,6 +1,6 @@
 ﻿using Projet_DotNet_P6_LJMA.Models;
 
-namespace Projet_DotNet_P6_LJMA.Repository.Interface;
+namespace Projet_DotNet_P6_LJMA.Repositories.Interfaces;
 
 public interface IVlogRepository
 {

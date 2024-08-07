@@ -1,8 +1,8 @@
 ﻿using Projet_DotNet_P6_LJMA.Data;
 using Projet_DotNet_P6_LJMA.Models;
-using Projet_DotNet_P6_LJMA.Repository.Interface;
+using Projet_DotNet_P6_LJMA.Repositories.Interfaces;
 
-namespace Projet_DotNet_P6_LJMA.Repository;
+namespace Projet_DotNet_P6_LJMA.Repositories;
 
 public class VlogRepository : IVlogRepository
 {
