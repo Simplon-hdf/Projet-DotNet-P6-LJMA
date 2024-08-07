@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Projet_DotNet_P6_LJMA.Models
 {
     [Table("post_philo")]
-    public class Post_philo
+    public class PostPhilo
     {
         [Column("id_post"),Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required, MaxLength(36)]
         public Guid id_post {  get; set; }
