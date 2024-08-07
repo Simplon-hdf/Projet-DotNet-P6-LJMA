@@ -1,4 +1,5 @@
 ﻿using Projet_DotNet_P6_LJMA.Data;
+using Projet_DotNet_P6_LJMA.Models;
 
 namespace Projet_DotNet_P6_LJMA.Repositories
 {
@@ -15,6 +16,20 @@ namespace Projet_DotNet_P6_LJMA.Repositories
         public UtilisateurRepository(ApiDbContext context)
         {
             _context = context;
+        }
+
+        /// <summary>
+        /// Récupere les utilisateurs en base de donnée
+        /// </summary>
+        /// <returns>
+        /// Renvoie une collection d'utilisateurs en asynchrone de type IAsyncEnumerable<Utilisateur>
+        /// </returns>
+        public async IAsyncEnumerable<Utilisateur> GetUtilisateursAsync()
+        {
+            await foreach (Utilisateur utilisateur in _context.Utilisateurs)
+            {
+                yield return utilisateur;
+            }
         }
     }
 }
