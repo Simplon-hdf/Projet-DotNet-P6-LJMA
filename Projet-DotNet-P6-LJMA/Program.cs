@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Projet_DotNet_P6_LJMA.Data;
 using Projet_DotNet_P6_LJMA.Repositories;
-using Projet_DotNet_P6_LJMA.Repositories.Interface;
+using Projet_DotNet_P6_LJMA.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
