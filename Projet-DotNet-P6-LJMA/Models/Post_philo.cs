@@ -4,9 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
-    /// <summary>
-    /// Cette classe représente l'entité Post_philo de la BDD.
-    /// </summary> 
     [Table("post_philo")]
     public class Post_philo
     {
