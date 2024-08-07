@@ -8,18 +8,13 @@ namespace Projet_DotNet_P6_LJMA.Models
 	/// </summary>
 	public class Vlog
 	{
-		[Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required]
+		[Column("id"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public Guid id_vlog { get; set; }
-		[Required]
-		[StringLength(50)]
+		[Column("nom_video"), Required, StringLength(50)]
 		public string? nom_video { get; set; }
-		[Required]
-		[StringLength(2000)]
+		[Column("url_video"), Required, StringLength(2000)]
 		public string? url_video { get; set; }
-		[Required]
-		[StringLength(2000)]
+		[Column("desc_video"), Required, StringLength(2000)]
 		public string? desc_video { get; set; }
 	}
 }
