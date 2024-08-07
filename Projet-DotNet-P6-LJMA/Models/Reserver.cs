@@ -7,6 +7,7 @@ namespace Projet_DotNet_P6_LJMA.Models
     /// <summary>
     /// Cette classe représente l'entité Reserver de la BDD.
     /// </summary>
+    [Table("Reserver")]
     public class Reserver
 	{
         [Column("id"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
