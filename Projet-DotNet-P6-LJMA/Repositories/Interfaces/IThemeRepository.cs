@@ -2,9 +2,6 @@
 
 namespace Projet_DotNet_P6_LJMA.Repositories.Interfaces
 {
-    /// <summary>
-    /// Cette classe représente l'interface du repository de la classe Theme.
-    /// </summary>
     public interface IThemeRepository
     {
         IAsyncEnumerable<Theme> GetAllAsync();
