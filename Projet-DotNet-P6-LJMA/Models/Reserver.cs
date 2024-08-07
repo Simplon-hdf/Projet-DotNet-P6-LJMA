@@ -11,11 +11,11 @@ namespace Projet_DotNet_P6_LJMA.Models
 	{
         [Column("id"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public Guid id_reservation { get; set; }
-        [Column("Utilisateur"), ForeignKey("id_utilisateur"), Required]
+        [Column("utilisateur"), ForeignKey("id_utilisateur"), Required]
 		public Guid id_utilisateur { get; set; }
-        [Column("Session"), ForeignKey("id_session"), Required]
+        [Column("session"), ForeignKey("id_session"), Required]
 		public Guid id_session { get; set; }
-        [Column("Participant"), Required]
+        [Column("participant"), Required]
 		public int nb_participant {  get; set; }
 
         #region Liaison de models
