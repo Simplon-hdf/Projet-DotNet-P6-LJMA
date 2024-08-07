@@ -10,7 +10,7 @@ namespace Projet_DotNet_P6_LJMA.Interfaces
         IAsyncEnumerable<Theme> GetAllAsync();
         Task<Theme> GetByIdAsync(string id);
         Task CreateAsync(Theme theme);
-        Task UpdateAsync(Theme them);
+        Task UpdateAsync(Theme theme);
         Task DeleteAsync(string id);
     }
 }
