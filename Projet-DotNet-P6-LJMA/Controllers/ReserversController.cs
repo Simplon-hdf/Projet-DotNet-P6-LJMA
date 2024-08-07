@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Projet_DotNet_P6_LJMA;
+namespace Projet_DotNet_P6_LJMA.Controllers;
 
 [ApiController, Route("[Controller]")]
 public class ReserversController : ControllerBase
