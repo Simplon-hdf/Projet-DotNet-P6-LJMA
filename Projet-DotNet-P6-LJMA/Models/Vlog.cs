@@ -6,6 +6,7 @@ namespace Projet_DotNet_P6_LJMA.Models
 	/// <summary>
 	/// Cette classe représente l'entité Vlog de la BDD.
 	/// </summary>
+	[Table("Vlog")]
 	public class Vlog
 	{
 		[Column("id"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
