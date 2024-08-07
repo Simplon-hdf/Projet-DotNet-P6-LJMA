@@ -14,6 +14,7 @@ builder.Services.AddScoped<IVlogRepository, VlogRepository>();
 builder.Services.AddScoped<IRandonneeRepository, RandonneeRepository>();
 builder.Services.AddScoped<IThemeRepository, ThemeRepository>();
 builder.Services.AddScoped<IPostPhiloRepository, PostPhiloRepository>();
+builder.Services.AddScoped<ISessionRepository, SessionRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
