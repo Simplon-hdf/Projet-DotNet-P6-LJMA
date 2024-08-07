@@ -1,19 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Projet_DotNet_P6_LJMA.Data;
 using Projet_DotNet_P6_LJMA.Models;
+using Projet_DotNet_P6_LJMA.Repositories.Interfaces;
 
 namespace Projet_DotNet_P6_LJMA.Repositories
 {
-    public interface IUtilisateurRepository
-    {
-        IAsyncEnumerable<Utilisateur> GetAllAsync();
-        Task<Utilisateur> GetByIdAsync(Guid id);
-        Task CreateAsync(Utilisateur utilisateur);
-        Task UpdateAsync(Utilisateur utilisateur);
-        Task DeleteAsync(Guid id);
-        Task<bool> UtilisateurExist(Guid id);
-    }
-
     public class UtilisateurRepository : IUtilisateurRepository
     {
         private readonly ApiDbContext _context;
