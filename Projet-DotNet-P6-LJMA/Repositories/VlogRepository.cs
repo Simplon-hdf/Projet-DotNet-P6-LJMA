@@ -1,6 +1,6 @@
 ﻿using Projet_DotNet_P6_LJMA.Data;
 using Projet_DotNet_P6_LJMA.Models;
-using Projet_DotNet_P6_LJMA.Interface;
+using Projet_DotNet_P6_LJMA.Repository.Interface;
 
 namespace Projet_DotNet_P6_LJMA.Repository;
 
