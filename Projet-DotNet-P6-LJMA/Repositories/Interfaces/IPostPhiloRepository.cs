@@ -4,10 +4,10 @@ namespace Projet_DotNet_P6_LJMA.Repositories.Interfaces
 {
     public interface IPostPhiloRepository
     {
-        IAsyncEnumerable<Post_philo> GetAllAsync();
-        Task<Post_philo?> GetByIdAsync(string id);
-        Task CreateAsync(Post_philo post_philo);
-        Task UpdateAsync(Post_philo post_philo);
+        IAsyncEnumerable<PostPhilo> GetAllAsync();
+        Task<PostPhilo?> GetByIdAsync(string id);
+        Task CreateAsync(PostPhilo post_philo);
+        Task UpdateAsync(PostPhilo post_philo);
         Task DeleteAsync(string id);
     }
 }
