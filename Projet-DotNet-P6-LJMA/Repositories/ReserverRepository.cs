@@ -1,8 +1,8 @@
 ﻿using Projet_DotNet_P6_LJMA.Data;
 using Projet_DotNet_P6_LJMA.Models;
-using Projet_DotNet_P6_LJMA.Repository.Interface;
+using Projet_DotNet_P6_LJMA.Repositories.Interface;
 
-namespace Projet_DotNet_P6_LJMA.Repository;
+namespace Projet_DotNet_P6_LJMA.Repositories;
 
 /// <summary>
 /// Repository de la classe Reserver.
