@@ -1,6 +1,6 @@
 ﻿using Projet_DotNet_P6_LJMA.Models;
 
-namespace Projet_DotNet_P6_LJMA.Repositories;
+namespace Projet_DotNet_P6_LJMA.Repositories.Interfaces;
 
 /// <summary>
 /// Cette interface représente le repository de la classe Reserver.
