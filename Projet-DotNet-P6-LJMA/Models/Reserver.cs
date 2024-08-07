@@ -9,21 +9,18 @@ namespace Projet_DotNet_P6_LJMA.Models
     /// </summary>
     public class Reserver
 	{
-		[Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required]
+        [Column("id"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public Guid id_reservation { get; set; }
-        [Required]
-        [ForeignKey("Utilisateur")]
+        [Column("Utilisateur"), ForeignKey("id_utilisateur"), Required]
 		public Guid id_utilisateur { get; set; }
-		[Required]
-		[ForeignKey("Session")]
+        [Column("Session"), ForeignKey("id_session"), Required]
 		public Guid id_session { get; set; }
+        [Column("Participant"), Required]
 		public int nb_participant {  get; set; }
 
         #region Liaison de models
-        public Session Session { get; set; }
-        public Utilisateur Utilisateur { get; set; }
+        public Session? Session { get; set; }
+        public Utilisateur? Utilisateur { get; set; }
         #endregion
     }
 }
