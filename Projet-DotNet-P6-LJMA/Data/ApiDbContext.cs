@@ -21,7 +21,6 @@ public class ApiDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Theme>().ToTable("Theme");
         modelBuilder.Entity<PostPhilo>().ToTable("PostPhilo");
         modelBuilder.Entity<Randonnee>().ToTable("Randonnee");
         modelBuilder.Entity<Vlog>().ToTable("Vlog");
