@@ -13,6 +13,7 @@ public class ApiDbContext : DbContext
 
     public DbSet<Theme> Themes { get; set; }
     public DbSet<Session> Sessions { get; set; }
+    public DbSet<Reserver> Reservers { get; set; }
     public DbSet<PostPhilo> PostPhilos { get; set; }
     public DbSet<Randonnee> Randonnees { get; set; }
     public DbSet<Utilisateur> Utilisateurs { get; set; }
@@ -25,7 +26,6 @@ public class ApiDbContext : DbContext
         modelBuilder.Entity<Randonnee>().ToTable("Randonnee");
         modelBuilder.Entity<Vlog>().ToTable("Vlog");
         modelBuilder.Entity<Session>().ToTable("Session");
-        modelBuilder.Entity<Reserver>().ToTable("Reserver");
 
 
         #region Relation des FOREIGN KEY
