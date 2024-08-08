@@ -3,17 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
-	/// <summary>
-	/// Cette classe représente l'entité Theme de la BDD.
-	/// </summary>
-	public class Theme
+    [Table("theme")]
+    public class Theme
 	{
-		[Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required]
-		public Guid id_theme { get; set; }
+        [Column("id_theme"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id { get; set; }
 
-		[StringLength(50)]
-		public string? nom_theme { get; set; }
+        [Column("nom_theme"), MaxLength(50)]
+        public string? Nom { get; set; }
 	}
 }
