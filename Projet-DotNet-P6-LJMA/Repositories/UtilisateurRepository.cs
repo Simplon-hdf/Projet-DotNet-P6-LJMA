@@ -53,7 +53,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
         /// </returns>
         public async Task<bool> UtilisateurExist(Guid id)
         {
-            return await _context.Utilisateurs.AnyAsync(utilisateur => utilisateur.id_utilisateur == id);
+            return await _context.Utilisateurs.AnyAsync(utilisateur => utilisateur.Id == id);
         }
 
         /// <summary>
