@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Projet_DotNet_P6_LJMA.Data;
 using Projet_DotNet_P6_LJMA.Repositories;
 using Projet_DotNet_P6_LJMA.Repositories.Interfaces;
+using Projet_DotNet_P6_LJMA.Services;
+using Projet_DotNet_P6_LJMA.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,9 @@ builder.Services.AddScoped<IRandonneeRepository, RandonneeRepository>();
 builder.Services.AddScoped<IThemeRepository, ThemeRepository>();
 builder.Services.AddScoped<IPostPhiloRepository, PostPhiloRepository>();
 builder.Services.AddScoped<ISessionRepository, SessionRepository>();
+
+builder.Services.AddScoped<IUtilisateurService, UtilisateurService>();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
