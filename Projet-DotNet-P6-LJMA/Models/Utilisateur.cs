@@ -3,23 +3,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
-    /// <summary>
-    /// La Classe Utilisateur est l'entité Utilisateur de ma base de données
-    /// </summary>
+    [Table("utilisateur")]
     public class Utilisateur
     {
-        [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid id_utilisateur { get; set; }
-        [StringLength(40)]
-        public string? prenom_utilisateur { get; set; }
-        [StringLength(40)]
-        public string? nom_utilisateur { get; set; }
-        [StringLength(20)]
-        public string? telephone_utilisateur { get; set; }
-        [StringLength(255)]
-        public string? mot_de_passe_utilisateur { get; set; }
-        [Required]
-        [StringLength(320)]
-        public string mail_utilisateur {  get; set; }
+        [Column("id_utilisateur"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id { get; set; }
+        [Column("prenom_utilisateur"), MaxLength(40)]
+        public string? Prenom { get; set; }
+        [Column("nom_utilisateur"), MaxLength(40)]
+        public string? Nom { get; set; }
+        [Column("telephone_utilisateur"), MaxLength(20)]
+        public string? Telephone { get; set; }
+        [Column("mot_de_passe_utilisateur"), MaxLength(255)]
+        public string? Password { get; set; }
+        [Column("mail_utilisateur"), Required, MaxLength(320)]
+        public string Mail {  get; set; }
     }
 }
