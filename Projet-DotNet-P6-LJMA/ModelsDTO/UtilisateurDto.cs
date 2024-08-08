@@ -13,8 +13,6 @@ namespace Projet_DotNet_P6_LJMA.ModelsDTO
         public string? Nom { get; set; }
         [MaxLength(20)]
         public string? Telephone { get; set; }
-        [MaxLength(255)]
-        public string? Password { get; set; }
         [Required, MaxLength(320)]
         public string Mail { get; set; }
     }
