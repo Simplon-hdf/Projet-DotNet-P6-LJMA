@@ -24,7 +24,6 @@ public class ApiDbContext : DbContext
         modelBuilder.Entity<PostPhilo>().ToTable("PostPhilo");
         modelBuilder.Entity<Randonnee>().ToTable("Randonnee");
         modelBuilder.Entity<Vlog>().ToTable("Vlog");
-        modelBuilder.Entity<Session>().ToTable("Session");
         modelBuilder.Entity<Reserver>().ToTable("Reserver");
 
 
