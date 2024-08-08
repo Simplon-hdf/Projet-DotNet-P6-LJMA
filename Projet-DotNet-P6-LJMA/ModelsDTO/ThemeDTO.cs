@@ -8,8 +8,6 @@ namespace Projet_DotNet_P6_LJMA.ModelsDTO
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         [MaxLength(50)]
-
         public string? Nom { get; set; }
-        
     }
 }
