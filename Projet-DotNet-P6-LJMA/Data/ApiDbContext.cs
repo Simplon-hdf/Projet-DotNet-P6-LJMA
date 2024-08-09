@@ -14,14 +14,13 @@ public class ApiDbContext : DbContext
     public DbSet<Theme> Themes { get; set; }
     public DbSet<Session> Sessions { get; set; }
     public DbSet<Reserver> Reservers { get; set; }
-    public DbSet<PostPhilo> PostPhilos { get; set; }
+    public DbSet<Post> Posts { get; set; }
     public DbSet<Randonnee> Randonnees { get; set; }
     public DbSet<Utilisateur> Utilisateurs { get; set; }
     public DbSet<Vlog> Vlogs { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<PostPhilo>().ToTable("PostPhilo");
         modelBuilder.Entity<Randonnee>().ToTable("Randonnee");
         modelBuilder.Entity<Vlog>().ToTable("Vlog");
         modelBuilder.Entity<Session>().ToTable("Session");
