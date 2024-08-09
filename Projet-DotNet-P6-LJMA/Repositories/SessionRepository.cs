@@ -25,7 +25,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
             }
         }
 
-        public async Task<Session?> GetByIdAsync(string id)
+        public async Task<Session?> GetByIdAsync(Guid id)
         {
             return await _context.Sessions.FindAsync(id);
         }
@@ -42,7 +42,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(string id)
+        public async Task DeleteAsync(Guid id)
         {
             var session = await _context.Sessions.FindAsync(id);
             if (session != null)
