@@ -19,6 +19,7 @@ builder.Services.AddScoped<IPostPhiloRepository, PostPhiloRepository>();
 builder.Services.AddScoped<ISessionRepository, SessionRepository>();
 
 builder.Services.AddScoped<IUtilisateurService, UtilisateurService>();
+builder.Services.AddScoped<IRandonneeService, RandonneeService>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
