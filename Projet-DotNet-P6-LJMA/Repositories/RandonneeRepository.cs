@@ -33,7 +33,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
 
         public async Task UpdateAsync(Randonnee randonnee)
         {
-            _context.Update(randonnee);
+            _context.Randonnees.Update(randonnee);
             await _context.SaveChangesAsync();
         }
 
