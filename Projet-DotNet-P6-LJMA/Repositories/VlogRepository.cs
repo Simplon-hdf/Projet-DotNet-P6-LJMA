@@ -28,7 +28,7 @@ public class VlogRepository : IVlogRepository
 
     public async Task CreateAsync(Vlog vlog)
     {
-        _context.Add(vlog);
+        _context.Vlogs.Add(vlog);
         await _context.SaveChangesAsync();
     }
 
