@@ -72,8 +72,12 @@ namespace Projet_DotNet_P6_LJMA.Repositories
         /// <param name="id">identifiant de l'utilisateur</param>
         public async Task DeleteAsync(Guid id)
         {
-            _context.Remove(id);
-            await _context.SaveChangesAsync();
+            var utilisateur = await _context.Utilisateurs.FindAsync(id);
+            if (utilisateur != null )
+            {
+                _context.Utilisateurs.Remove(utilisateur);
+                await _context.SaveChangesAsync();
+            }
         }
 
         /// <summary>
