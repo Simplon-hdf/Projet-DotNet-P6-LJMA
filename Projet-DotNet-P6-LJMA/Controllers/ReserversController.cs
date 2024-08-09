@@ -24,7 +24,7 @@ public class ReserversController : ControllerBase
     [HttpGet("{id}"), ProducesResponseType(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetId(Guid id)
     {
-        var reservers = _reserverService.GetByIdAsync(id);
+        var reservers = await _reserverService.GetByIdAsync(id);
         return Ok(reservers);
     }
 
@@ -35,7 +35,7 @@ public class ReserversController : ControllerBase
         return Created();
     }
 
-    [HttpPut("{id}"), ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
+    [HttpPut, ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Edit([FromBody] ReserverDto reserverDto)
     {
         await _reserverService.UpdateAsync(reserverDto);
