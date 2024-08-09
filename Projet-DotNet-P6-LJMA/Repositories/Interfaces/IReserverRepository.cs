@@ -8,8 +8,8 @@ namespace Projet_DotNet_P6_LJMA.Repositories.Interfaces;
 public interface IReserverRepository
 {
     IAsyncEnumerable<Reserver> GetAllAsync();
-    Task<Reserver?> GetByIdAsync(string id);
+    Task<Reserver?> GetByIdAsync(Guid id);
     Task CreateAsync(Reserver reserver);
     Task UpdateAsync(Reserver reserver);
-    Task DeleteAsync(string id);
+    Task DeleteAsync(Guid id);
 }
