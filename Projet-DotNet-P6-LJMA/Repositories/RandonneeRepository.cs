@@ -20,7 +20,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
             }
         }
 
-        public async Task<Randonnee?> GetByIdAsync(string id)
+        public async Task<Randonnee?> GetByIdAsync(Guid id)
         {
             return await _context.Randonnees.FindAsync(id);
         }
@@ -37,7 +37,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(string id)
+        public async Task DeleteAsync(Guid id)
         {
             var randonnee = await _context.Randonnees.FindAsync(id);
             if (randonnee != null)

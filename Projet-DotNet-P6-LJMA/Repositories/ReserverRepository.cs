@@ -2,52 +2,53 @@
 using Projet_DotNet_P6_LJMA.Models;
 using Projet_DotNet_P6_LJMA.Repositories.Interfaces;
 
-namespace Projet_DotNet_P6_LJMA.Repositories;
-
-/// <summary>
-/// Repository de la classe Reserver.
-/// </summary>
-public class ReserverRepository : IReserverRepository
+namespace Projet_DotNet_P6_LJMA.Repositories
 {
-    private readonly ApiDbContext _context;
-
-    public ReserverRepository(ApiDbContext context)
+    /// <summary>
+    /// Repository de la classe Reserver.
+    /// </summary>
+    public class ReserverRepository : IReserverRepository
     {
-        _context = context;
-    }
+        private readonly ApiDbContext _context;
 
-    public async IAsyncEnumerable<Reserver> GetAllAsync()
-    {
-        await foreach (var reserver in _context.Reservers)
+        public ReserverRepository(ApiDbContext context)
         {
-            yield return reserver;
+            _context = context;
         }
-    }
 
-    public async Task<Reserver?> GetByIdAsync(string id)
-    {
-        return await _context.Reservers.FindAsync(id);
-    }
-
-    public async Task CreateAsync(Reserver reserver)
-    {
-        _context.Add(reserver);
-        await _context.SaveChangesAsync();
-    }
-
-    public async Task UpdateAsync(Reserver reserver)
-    {
-        _context.Update(reserver);
-        await _context.SaveChangesAsync();
-    }
-
-    public async Task DeleteAsync(string id)
-    {
-        var reserver = await _context.Reservers.FindAsync(id);
-        if (reserver != null)
+        public async IAsyncEnumerable<Reserver> GetAllAsync()
         {
-            _context.Reservers.Remove(reserver);
+            await foreach (var reserver in _context.Reservers)
+            {
+                yield return reserver;
+            }
+        }
+
+        public async Task<Reserver?> GetByIdAsync(Guid id)
+        {
+            return await _context.Reservers.FindAsync(id);
+        }
+
+        public async Task CreateAsync(Reserver reserver)
+        {
+            _context.Add(reserver);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(Reserver reserver)
+        {
+            _context.Update(reserver);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            var reserver = await _context.Reservers.FindAsync(id);
+            if (reserver != null)
+            {
+                _context.Reservers.Remove(reserver);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

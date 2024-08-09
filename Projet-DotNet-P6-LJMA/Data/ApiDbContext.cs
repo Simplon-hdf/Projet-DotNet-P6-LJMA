@@ -21,12 +21,6 @@ public class ApiDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Randonnee>().ToTable("Randonnee");
-        modelBuilder.Entity<Vlog>().ToTable("Vlog");
-        modelBuilder.Entity<Session>().ToTable("Session");
-        modelBuilder.Entity<Reserver>().ToTable("Reserver");
-
-
         #region Relation des FOREIGN KEY
 
         modelBuilder.Entity<Reserver>()
@@ -42,12 +36,12 @@ public class ApiDbContext : DbContext
         modelBuilder.Entity<Session>()
             .HasOne(s => s.Theme)
             .WithMany()
-            .HasForeignKey(s => s.id_theme);
+            .HasForeignKey(s => s.Id_theme);
 
         modelBuilder.Entity<Session>()
             .HasOne(s => s.Randonnee)
             .WithMany()
-            .HasForeignKey(s => s.id_rando);
+            .HasForeignKey(s => s.Id_rando);
         #endregion
     }
 }

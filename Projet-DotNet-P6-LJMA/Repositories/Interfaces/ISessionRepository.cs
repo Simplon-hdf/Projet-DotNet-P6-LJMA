@@ -9,9 +9,9 @@ namespace Projet_DotNet_P6_LJMA.Repositories.Interfaces
     public interface ISessionRepository
     {
         IAsyncEnumerable<Session> GetAllAsync();
-        Task<Session?> GetByIdAsync(string id);
+        Task<Session?> GetByIdAsync(Guid id);
         Task CreateAsync(Session session);
         Task UpdateAsync(Session session);
-        Task DeleteAsync(string id);
+        Task DeleteAsync(Guid id);
     }
 }
