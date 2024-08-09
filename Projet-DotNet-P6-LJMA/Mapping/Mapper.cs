@@ -12,5 +12,9 @@ namespace Projet_DotNet_P6_LJMA.Mapping
 
         public static partial ReserverDto MapToDto(this Reserver reserver);
         public static partial Reserver Map(this ReserverDto reserver);
+
+        public static partial ThemeDto MapToDto(this Theme utilisateur);
+        public static partial Theme Map(this ThemeDto utilisateur);
+
     }
 }
