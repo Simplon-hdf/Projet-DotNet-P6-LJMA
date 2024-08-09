@@ -15,12 +15,12 @@ builder.Services.AddScoped<IReserverRepository, ReserverRepository>();
 builder.Services.AddScoped<IVlogRepository, VlogRepository>();
 builder.Services.AddScoped<IRandonneeRepository, RandonneeRepository>();
 builder.Services.AddScoped<IThemeRepository, ThemeRepository>();
-builder.Services.AddScoped<IPostPhiloRepository, PostPhiloRepository>();
+builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<ISessionRepository, SessionRepository>();
 
 builder.Services.AddScoped<IUtilisateurService, UtilisateurService>();
 builder.Services.AddScoped<IThemeService, ThemeService>();
-
+builder.Services.AddScoped<IPostService, PostService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
