@@ -10,8 +10,11 @@ namespace Projet_DotNet_P6_LJMA.Mapping
         public static partial UtilisateurDto MapToDto(this Utilisateur utilisateur);
         public static partial Utilisateur Map(this UtilisateurDto utilisateur);
 
-        public static partial ThemeDto MapToDto(this Theme utilisateur);
-        public static partial Theme Map(this ThemeDto utilisateur);
+        public static partial ThemeDto MapToDto(this Theme theme);
+        public static partial Theme Map(this ThemeDto theme);
+
+        public static partial SessionDto MapToDto(this Session session);
+        public static partial Session Map(this SessionDto session);
 
         public static partial VlogDto MapToDo(this Vlog vlog);
         public static partial Vlog Map(this VlogDto vlog);
