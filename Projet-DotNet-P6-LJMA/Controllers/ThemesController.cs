@@ -24,7 +24,7 @@ namespace Projet_DotNet_P6_LJMA.Controllers
         [HttpGet("{id}"), ProducesResponseType(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetId(Guid id)
         {
-            var theme = _themeService.GetByIdAsync(id);
+            var theme = await _themeService.GetByIdAsync(id);
             return Ok(theme);
         }
 
