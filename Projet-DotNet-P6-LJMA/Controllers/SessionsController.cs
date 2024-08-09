@@ -24,7 +24,7 @@ namespace Projet_DotNet_P6_LJMA.Controllers
         [HttpGet("{id}"), ProducesResponseType(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetId(Guid id)
         {
-            var session = _sessionService.GetByIdAsync(id);
+            var session = await _sessionService.GetByIdAsync(id);
             return Ok(session);
         }
 
@@ -35,7 +35,7 @@ namespace Projet_DotNet_P6_LJMA.Controllers
             return Created();
         }
 
-        [HttpPut("{id}"), ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpPut, ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Edit([FromBody] SessionDto sessionDto)
         {
             await _sessionService.UpdateAsync(sessionDto);
