@@ -32,16 +32,9 @@ namespace Projet_DotNet_P6_LJMA.Controllers
         [HttpPost, ProducesResponseType(StatusCodes.Status201Created), ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Create([FromBody] RandonneeDto randonneeDto)
         {
-            try
-            {
                 await _randonneeService.CreateAsync(randonneeDto);
                 return Created();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Source + " :  " + ex.Message);
-                return NotFound();
-            }
+           
         }
 
         [HttpPut, ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
