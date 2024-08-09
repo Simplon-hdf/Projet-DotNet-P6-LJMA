@@ -21,7 +21,7 @@ public class VlogRepository : IVlogRepository
         }
     }
 
-    public async Task<Vlog?> GetByIdAsync(string id)
+    public async Task<Vlog?> GetByIdAsync(Guid id)
     {
         return await _context.Vlogs.FindAsync(id);
     }
@@ -38,7 +38,7 @@ public class VlogRepository : IVlogRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(string id)
+    public async Task DeleteAsync(Guid id)
     {
         var vlog = await _context.Vlogs.FindAsync(id);
         if (vlog != null)
