@@ -12,12 +12,12 @@ namespace Projet_DotNet_P6_LJMA.Models
 		[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
-		public Guid id_vlog { get; set; }
+		public Guid vlogId { get; set; }
 		[Column("nom_video"), Required, MaxLength(50)]
-		public string? nom_video { get; set; }
+		public string? nomVideo { get; set; }
 		[Column("url_video"), Required, MaxLength(2000)]
-		public string? url_video { get; set; }
+		public string? urlVideo { get; set; }
 		[Column("desc_video"), Required, MaxLength(2000)]
-		public string? desc_video { get; set; }
+		public string? descVideo { get; set; }
 	}
 }
