@@ -33,7 +33,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<Theme> GetByIdAsync(string id)
+        public async Task<Theme> GetByIdAsync(Guid id)
         {
             return await _context.Themes.FindAsync(id);
         }
@@ -65,7 +65,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task DeleteAsync(string id)
+        public async Task DeleteAsync(Guid id)
         {
             var contact = await _context.Themes.FindAsync(id);
             if (contact != null)
