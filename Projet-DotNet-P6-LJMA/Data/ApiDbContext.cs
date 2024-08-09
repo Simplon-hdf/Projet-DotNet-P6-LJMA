@@ -26,12 +26,12 @@ public class ApiDbContext : DbContext
         modelBuilder.Entity<Reserver>()
             .HasOne(r => r.Session)
             .WithMany()
-            .HasForeignKey(r => r.id_session);
+            .HasForeignKey(r => r.sessionId);
 
         modelBuilder.Entity<Reserver>()
            .HasOne(r => r.Utilisateur)
            .WithMany()
-           .HasForeignKey(r => r.id_utilisateur);
+           .HasForeignKey(r => r.utilisateurId);
 
         modelBuilder.Entity<Session>()
             .HasOne(s => s.Theme)
