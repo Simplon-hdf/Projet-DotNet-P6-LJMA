@@ -12,5 +12,8 @@ namespace Projet_DotNet_P6_LJMA.Mapping
 
         public static partial ThemeDto MapToDto(this Theme utilisateur);
         public static partial Theme Map(this ThemeDto utilisateur);
+
+        public static partial PostDto MapToDto(this Post post);
+        public static partial Post Map(this PostDto post);
     }
 }
