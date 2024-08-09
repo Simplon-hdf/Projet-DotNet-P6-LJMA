@@ -23,7 +23,7 @@ namespace Projet_DotNet_P6_LJMA.Controllers
         [HttpGet("{id}"), ProducesResponseType(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetId(Guid id)
         {
-            var utilisateur = _utilisateurService.GetByIdAsync(id);
+            var utilisateur = await _utilisateurService.GetByIdAsync(id);
             return Ok(utilisateur);
         }
 
