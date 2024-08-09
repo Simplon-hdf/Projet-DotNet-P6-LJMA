@@ -29,7 +29,7 @@ namespace Projet_DotNet_P6_LJMA.Controllers
         }
 
         [HttpPost, ProducesResponseType(StatusCodes.Status201Created), ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Create([FromBody] SessionCreatedDto sessionDto)
+        public async Task<IActionResult> Create([FromBody] SessionDto sessionDto)
         {
             await _sessionService.CreateAsync(sessionDto);
             return Created();
