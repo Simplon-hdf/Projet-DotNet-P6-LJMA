@@ -5,7 +5,7 @@ namespace Projet_DotNet_P6_LJMA.ModelsDTO
 {
     public class RandonneeDto
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity), Required, MaxLength(36)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
         public Guid Id { get; set; }
         [Required]
         public decimal Prix { get; set; }
