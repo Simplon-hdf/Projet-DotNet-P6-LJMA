@@ -1,12 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
     [Table("utilisateur")]
     public class Utilisateur
     {
-        [Column("id_utilisateur"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id_utilisateur", TypeName = "BINARY(16)"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         [Column("prenom_utilisateur"), MaxLength(40)]
         public string? Prenom { get; set; }
