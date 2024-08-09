@@ -36,12 +36,12 @@ public class ApiDbContext : DbContext
         modelBuilder.Entity<Session>()
             .HasOne(s => s.Theme)
             .WithMany()
-            .HasForeignKey(s => s.id_theme);
+            .HasForeignKey(s => s.Id_theme);
 
         modelBuilder.Entity<Session>()
             .HasOne(s => s.Randonnee)
             .WithMany()
-            .HasForeignKey(s => s.id_rando);
+            .HasForeignKey(s => s.Id_rando);
         #endregion
     }
 }
