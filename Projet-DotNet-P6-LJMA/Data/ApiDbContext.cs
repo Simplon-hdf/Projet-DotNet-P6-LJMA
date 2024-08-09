@@ -21,12 +21,6 @@ public class ApiDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<PostPhilo>().ToTable("PostPhilo");
-        modelBuilder.Entity<Randonnee>().ToTable("Randonnee");
-        modelBuilder.Entity<Vlog>().ToTable("Vlog");
-        modelBuilder.Entity<Reserver>().ToTable("Reserver");
-
-
         #region Relation des FOREIGN KEY
 
         modelBuilder.Entity<Reserver>()

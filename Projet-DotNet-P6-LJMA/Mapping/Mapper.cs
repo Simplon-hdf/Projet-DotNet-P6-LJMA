@@ -15,5 +15,8 @@ namespace Projet_DotNet_P6_LJMA.Mapping
 
         public static partial SessionDto MapToDto(this Session session);
         public static partial Session Map(this SessionDto session);
+
+        public static partial VlogDto MapToDo(this Vlog vlog);
+        public static partial Vlog Map(this VlogDto vlog);
     }
 }
