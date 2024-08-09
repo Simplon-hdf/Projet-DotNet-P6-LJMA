@@ -27,7 +27,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
 
         public async Task CreateAsync(Randonnee randonnee)
         {
-            _context.Add(randonnee);
+            _context.Randonnees.Add(randonnee);
             await _context.SaveChangesAsync();
         }
 
