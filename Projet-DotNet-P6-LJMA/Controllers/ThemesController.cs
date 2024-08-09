@@ -29,7 +29,7 @@ namespace Projet_DotNet_P6_LJMA.Controllers
         }
 
         [HttpPost, ProducesResponseType(StatusCodes.Status201Created), ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Create([FromBody] ThemeCreatedDto themeDto)
+        public async Task<IActionResult> Create([FromBody] ThemeDto themeDto)
         {
             await _themeService.CreateAsync(themeDto);
             return Created();
