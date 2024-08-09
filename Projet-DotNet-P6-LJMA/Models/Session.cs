@@ -3,31 +3,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
-    /// <summary>
-    /// SummCette classe représente l'entité Session de la BDD.
-    /// </summary>
+    [Table("session")]
     public class Session
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required]
-        public Guid id_session{ get; set; }
+        [Column("id_session"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id{ get; set; }
 
-        [StringLength(50)]
-        public string? nom_session { get; set; }
+        [Column("nom_session"), MaxLength(50)]
+        public string? Nom { get; set; }
 
-        [Required]
-        public DateOnly date_debut_session { get; set; }
+        [Column("date_debut_session")]
+        public DateOnly Date_debut { get; set; }
 
-        [Required]
-        public DateOnly date_fin_session { get; set; }
+        [Column("date_fin_session")]
+        public DateOnly Date_fin { get; set; }
 
-        [ForeignKey("Randonnee")]
-        [Required]
-        public Guid id_rando { get; set; }
-        [ForeignKey("Theme")]
-        [Required]
-        public Guid id_theme { get; set; }
+        [Column("id_rando"), ForeignKey("Randonnee"), Required]
+        public Guid Id_rando { get; set; }
+        [Column("id_theme"), ForeignKey("Theme"), Required]
+        public Guid Id_theme { get; set; }
 
         #region Liaison de models
         public Randonnee Randonnee { get; set; }

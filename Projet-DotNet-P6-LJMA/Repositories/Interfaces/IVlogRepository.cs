@@ -5,8 +5,8 @@ namespace Projet_DotNet_P6_LJMA.Repositories.Interfaces;
 public interface IVlogRepository
 {
     IAsyncEnumerable<Vlog> GetAllAsync();
-    Task<Vlog?> GetByIdAsync(string id);
+    Task<Vlog?> GetByIdAsync(Guid id);
     Task CreateAsync(Vlog vlog);
     Task UpdateAsync(Vlog vlog);
-    Task DeleteAsync(string id);
+    Task DeleteAsync(Guid id);
 }
