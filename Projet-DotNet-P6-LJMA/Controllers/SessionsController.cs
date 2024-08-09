@@ -1,38 +1,52 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Projet_DotNet_P6_LJMA.ModelsDTO;
+using Projet_DotNet_P6_LJMA.Services.Interfaces;
 
 namespace Projet_DotNet_P6_LJMA.Controllers
 {
     [ApiController, Route("[Controller]")]
     public class SessionsController : ControllerBase
     {
+        private readonly ISessionService _sessionService;
+
+        public SessionsController(ISessionService sessionService)
+        {
+            _sessionService = sessionService;
+        }
+
         [HttpGet, ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(null);
+            var sessions = _sessionService.GetAllAsync();
+            return Ok(sessions);
         }
 
         [HttpGet("{id}"), ProducesResponseType(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetId(string id)
+        public async Task<IActionResult> GetId(Guid id)
         {
-            return Ok(null);
+            var session = _sessionService.GetByIdAsync(id);
+            return Ok(session);
         }
 
         [HttpPost, ProducesResponseType(StatusCodes.Status201Created), ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create([FromBody] SessionCreatedDto sessionDto)
         {
-            return Ok(null);
+            await _sessionService.CreateAsync(sessionDto);
+            return Created();
         }
 
         [HttpPut("{id}"), ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit([FromBody] SessionDto sessionDto)
         {
-            return Ok(null);
+            await _sessionService.UpdateAsync(sessionDto);
+            return NoContent();
         }
 
         [HttpDelete("{id}"), ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            return Ok(null);
+            await _sessionService.DeleteAsync(id);
+            return NoContent();
         }
     }
 }
