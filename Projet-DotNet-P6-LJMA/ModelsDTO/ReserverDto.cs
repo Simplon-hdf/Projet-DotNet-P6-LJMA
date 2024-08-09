@@ -2,8 +2,8 @@
 
 public class ReserverDto
 {
-    public Guid id_reservation { get; set; }
-    public Guid id_utilisateur { get; set; }
-    public Guid id_session { get; set; }
-    public int nb_participant { get; set; }
+    public Guid reservationId { get; set; }
+    public Guid utilisateurId { get; set; }
+    public Guid sessionId { get; set; }
+    public int participantNb { get; set; }
 }
