@@ -3,15 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_DotNet_P6_LJMA.Models
 {
-	/// <summary>
-	/// Cette classe représente l'entité Vlog de la BDD.
-	/// </summary>
 	[Table("Vlog")]
 	public class Vlog
 	{
-		[Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required]
+		[Column("id_vlog"), Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public Guid vlogId { get; set; }
 		[Column("nom_video"), Required, MaxLength(50)]
 		public string? nomVideo { get; set; }
