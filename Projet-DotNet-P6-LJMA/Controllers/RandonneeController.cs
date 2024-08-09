@@ -25,18 +25,26 @@ namespace Projet_DotNet_P6_LJMA.Controllers
         [HttpGet("{id}"), ProducesResponseType(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetId(Guid id)
         {
-            var randonnees = _randonneeService.GetByIdAsync(id);
+            var randonnees = await _randonneeService.GetByIdAsync(id);
             return Ok(randonnees);
         }
 
         [HttpPost, ProducesResponseType(StatusCodes.Status201Created), ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Create([FromBody] RandonneeDto randonneeDto)
         {
-            await _randonneeService.CreateAsync(randonneeDto);
-            return Created();
+            try
+            {
+                await _randonneeService.CreateAsync(randonneeDto);
+                return Created();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Source + " :  " + ex.Message);
+                return NotFound();
+            }
         }
 
-        [HttpPut("{id}"), ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpPut, ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Edit([FromBody] RandonneeDto randonneeDto)
         {
             await _randonneeService.UpdateAsync(randonneeDto);
