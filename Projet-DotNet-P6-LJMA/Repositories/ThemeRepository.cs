@@ -45,7 +45,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
         /// <returns></returns>
         public async Task CreateAsync(Theme theme)
         {
-            _context.Add(theme);
+            _context.Themes.Add(theme);
             await _context.SaveChangesAsync();
         }
 
@@ -56,7 +56,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
         /// <returns></returns>
         public async Task UpdateAsync(Theme theme)
         {
-            _context.Update(theme);
+            _context.Themes.Update(theme);
             await _context.SaveChangesAsync();
         }
 
