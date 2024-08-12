@@ -35,7 +35,7 @@ namespace Projet_DotNet_P6_LJMA.Controllers
             return Created();
         }
 
-        [HttpPut("{id}"), ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpPut, ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Edit([FromBody] PostDto postDto)
         {
             await _postService.UpdateAsync(postDto);
