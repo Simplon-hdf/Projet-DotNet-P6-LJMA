@@ -6,10 +6,10 @@ namespace Projet_DotNet_P6_LJMA.ModelsDTO
     public class PostDto
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
-        public Guid id_post { get; set; }
+        public Guid Id { get; set; }
         [MaxLength(2000), Required]
-        public string? content_post { get; set; }
+        public string? Content { get; set; }
         [MaxLength(2000)]
-        public string img_post { get; set; }
+        public string Image { get; set; }
     }
 }
