@@ -7,7 +7,7 @@ namespace Projet_DotNet_P6_LJMA.Models
     [Table("post")]
     public class Post
     {
-        [Column("id_post"),Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required, MaxLength(36)]
+        [Column("id_post", TypeName = "BINARY(16)") ,Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
         public Guid Id {  get; set; }
         [Column("content_post"), MaxLength(2000), Required]
         public string? Content{ get; set; }
