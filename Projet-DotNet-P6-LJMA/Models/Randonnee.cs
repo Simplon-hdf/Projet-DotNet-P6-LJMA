@@ -7,7 +7,7 @@ namespace Projet_DotNet_P6_LJMA.Models
     [Table("Randonnee")]
     public class Randonnee
     {
-        [Column("id_randonnee"),Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required, MaxLength(36)]
+        [Column("id_randonnee", TypeName = "BINARY(16)"),Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
         public Guid Id { get; set; }
         [Column("prix_rando"),Required]
         public decimal Prix { get; set; }
@@ -23,6 +23,5 @@ namespace Projet_DotNet_P6_LJMA.Models
         public int Nb_jour { get; set; }
         [Column("limite_participant"), Required]
         public int Limite_participant { get; set; }
-
     }
 }
