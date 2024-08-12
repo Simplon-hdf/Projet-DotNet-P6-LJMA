@@ -24,7 +24,7 @@ public class VlogsController : ControllerBase
     [HttpGet("{id}"), ProducesResponseType(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetId(Guid id)
     {
-        var vlogs = _vlogService.GetByIdAsync(id);
+        var vlogs = await _vlogService.GetByIdAsync(id);
         return Ok(vlogs);
     }
 
@@ -35,7 +35,7 @@ public class VlogsController : ControllerBase
         return NoContent();
     }
 
-    [HttpPut("{id}"), ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
+    [HttpPut, ProducesResponseType(StatusCodes.Status204NoContent), ProducesResponseType(StatusCodes.Status400BadRequest), ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Edit([FromBody] VlogDto vlogDto)
     {
         await _vlogService.UpdateAsync(vlogDto);
