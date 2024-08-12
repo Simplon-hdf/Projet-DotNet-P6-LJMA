@@ -14,7 +14,8 @@ namespace Projet_DotNet_P6_LJMA.Mapping
         public static partial Post Map(this PostDto post);
 
         public static partial ReserverDto MapToDto(this Reserver reserver);
-        public static partial Reserver Map(this ReserverDto reserver);
+        public static partial Reserver Map(this ReserverDto reserverDto);
+        public static partial Reserver Map(this ReserverCreatedDto reserverCreatedDto);
 
         public static partial RandonneeDto MapToDto(this Randonnee utilisateur);
         public static partial Randonnee Map(this RandonneeDto utilisateur);

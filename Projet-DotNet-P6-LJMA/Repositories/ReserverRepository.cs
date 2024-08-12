@@ -37,7 +37,7 @@ namespace Projet_DotNet_P6_LJMA.Repositories
 
         public async Task UpdateAsync(Reserver reserver)
         {
-            _context.Update(reserver);
+            _context.Reservers.Update(reserver);
             await _context.SaveChangesAsync();
         }
 
