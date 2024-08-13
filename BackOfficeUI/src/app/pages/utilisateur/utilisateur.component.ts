@@ -43,7 +43,6 @@ export class UtilisateurComponent implements OnInit {
       },
     ];
 
-
     this.applyFilter();
   }
 
