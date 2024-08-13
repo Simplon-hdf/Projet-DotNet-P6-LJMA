@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [SidebarComponent, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'BackOfficeUI';
+  title = "BackOfficeUI";
 }
