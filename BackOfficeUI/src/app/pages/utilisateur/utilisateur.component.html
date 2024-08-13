@@ -1,1 +1,23 @@
-<p>utilisateur works!</p>
+<input type="text" [(ngModel)]="userFilter" class="search-bar" placeholder="Rechercher un Utilisateur" (keyup)="applyFilter()">
+
+<h2>Tableau des Utilisateurs</h2>
+
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Téléphone</th>
+        <th>Email</th>
+        <th>Rôle</th>
+    </tr>
+    <!-- Ajoutez d'autres utilisateurs ici -->
+     @for (utilisateur of utilisateursFiltre; track utilisateur.id){
+        <tr>
+            <td>{{utilisateur.nom}}</td>
+            <td>{{utilisateur.prenom}}</td>
+            <td>{{utilisateur.tel}}</td>
+            <td>{{utilisateur.mail}}</td>
+            <td>{{utilisateur.role}}</td>
+        </tr>
+     }
+</table>
