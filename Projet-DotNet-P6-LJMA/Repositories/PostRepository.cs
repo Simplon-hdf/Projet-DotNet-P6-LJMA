@@ -27,13 +27,13 @@ namespace Projet_DotNet_P6_LJMA.Repositories
 
         public async Task CreateAsync(Post post)
         {
-            _context.Add(post);
+            _context.Posts.Add(post);
             await _context.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(Post post)
         {
-            _context.Update(post);
+            _context.Posts.Update(post);
             await _context.SaveChangesAsync();
         }
 
