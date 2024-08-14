@@ -5,10 +5,16 @@
         <form class="login-form">
           <h2>Inscription</h2>
           <div class="input-group">
-            <input type="text" id="nom" name="nom" placeholder="Nom" required>
+            <input [(ngModel)]="user.nom" type="text" id="nom" name="nom" placeholder="Nom" required>
+            @if (user.nom == ""){
+              <p style="color: red;">Champs obligatoire</p>
+            }
           </div>
           <div class="input-group">
-            <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+            <input [(ngModel)]="user.prenom" type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+            @if (user.prenom == ""){
+              <p style="color: red;">Champs obligatoire</p>
+            }
           </div>
           <div class="input-group">
             <input [(ngModel)]="user.email" type="text" id="e-mail" name="e-mail" placeholder="E-mail" required>
@@ -25,12 +31,12 @@
           <div class="input-group">
             <input [(ngModel)]="user.motDePasse" type="password" id="password" name="password" placeholder="Mots De Passe" required>
             @if (user.motDePasse && !isValidPassword()) {
-              <p style="color: white;">Le mot de passe possède de 12 caractères de type différent
+              <p style="color: white;">Le mot de passe doit posséder 12 caractères de type différent
                 (majuscules, minuscules, chiffres, caractères spéciaux)</p>
             }
           </div>
           <button (click)="onSubmit()" type="submit" class="submit-btn">S'inscrire</button>
-          <button style="margin-top: 10px;" type="submit" class="submit-btn"><a style="color: white; text-decoration: none" routerLink="/login">Se connecter</a></button>
+          <button routerLink="/login" style="margin-top: 10px;" type="submit" class="submit-btn"><a style="color: white; text-decoration: none">Se connecter</a></button>
         </form>
       </div>
     </div>

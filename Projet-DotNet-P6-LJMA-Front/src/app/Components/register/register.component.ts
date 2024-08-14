@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {RouterLink, Router} from "@angular/router";
-import {FormsModule, MaxLengthValidator} from "@angular/forms";
-import {LoginComponent} from "../login/login.component";
+import { RouterLink, Router } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 import { UserRegister } from "../../Models/reg.model";
 
 @Component({
@@ -21,7 +20,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(): void {
     if (this.isValidMail() && this.isValidPassword() && this.isValidNumber()) {
-      console.log("User : " + this.user.email); // Remplacé alert par console.log pour le débogage
+      console.log("User : " + this.user.email);
 
       // Ici, vous devriez normalement faire un appel API pour l'authentification
       // Pour l'instant, nous allons simplement simuler une connexion réussie
@@ -46,8 +45,7 @@ export class RegisterComponent implements OnInit {
     }
 
     // Expression régulière pour les numéros de téléphone français
-    const phonePattern = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
-
+    const phonePattern : RegExp = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
     return phonePattern.test(this.user.tel);
   }
 
