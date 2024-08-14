@@ -1,19 +1,31 @@
-import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import {Component, OnInit} from '@angular/core';
 import { HeaderComponent } from "../../Components/header/header.component";
-import {SejourComponent} from "../../Components/sejour/sejour.component";
+import { ViewportScroller } from "@angular/common";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    RouterLink,
     HeaderComponent,
-    SejourComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  constructor(private scroller: ViewportScroller, private route : Router) {}
 
+  ngOnInit() {
+    this.route.navigate(["/"]);
+  }
+
+  goDown() {
+    const about = document.getElementById("about");
+    // @ts-ignore
+    about.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    })
+  }
 }
