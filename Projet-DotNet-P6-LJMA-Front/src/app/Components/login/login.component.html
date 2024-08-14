@@ -7,18 +7,18 @@
           <div class="input-group">
             <input type="text" [(ngModel)]="user.login" id="lname" name="prenom" placeholder="E-Mail" required>
             @if (user.login && !isValidLogin()) {
-              <p>Le login n'est pas valide (mail)</p>
+              <p style="color: white;">Le login n'est pas valide (mail)</p>
             }
           </div>
           <div class="input-group">
             <input type="password" [(ngModel)]="user.motDePasse" id="password" name="password" placeholder="Mots De Passe" required>
             @if (user.motDePasse && !isValidPassword()) {
-              <p>Le mot de passe possède de 12 caractères de type différent
+              <p style="color: white;">Le mot de passe possède de 12 caractères de type différent
                 (majuscules, minuscules, chiffres, caractères spéciaux)</p>
             }
           </div>
           <button (click)="onSubmit()" type="button" class="submit-btn">Se connecter</button>
-          <button style="margin-top: 10px;" type="submit" class="submit-btn"><a style="color: white; text-decoration: none" routerLink="/signup">S'inscrire</a></button>
+          <button routerLink="/signup" style="margin-top: 10px;" type="submit" class="submit-btn"><a style="color: white; text-decoration: none" >S'inscrire</a></button>
         </form>
       </div>
     </div>
