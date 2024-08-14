@@ -5,26 +5,31 @@
         <form class="login-form">
           <h2>Inscription</h2>
           <div class="input-group">
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom" required>
+            <input type="text" id="nom" name="nom" placeholder="Nom" required>
           </div>
           <div class="input-group">
-            <label for="prenom">Prénom</label>
-            <input type="text" id="prenom" name="prenom" required>
+            <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
           </div>
           <div class="input-group">
-            <label for="e-mail">E-Mail</label>
-            <input type="text" id="e-mail" name="e-mail" required>
+            <input [(ngModel)]="user.email" type="text" id="e-mail" name="e-mail" placeholder="E-mail" required>
+            @if (user.email && !isValidMail()) {
+              <p style="color: white;">L'adresse mail n'est pas valide</p>
+            }
           </div>
           <div class="input-group">
-            <label for="tel">Téléphone</label>
-            <input type="text" id="tel" name="telephone" required>
+            <input [(ngModel)]="user.tel" type="text" id="tel" name="telephone" placeholder="Téléphone" required>
+            @if (user.tel && !isValidNumber()) {
+              <p style="color: white;">Numéro de téléphone invalide.<br>Veuillez entrer un numéro de téléphone français valide.</p>
+            }
           </div>
           <div class="input-group">
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" required>
+            <input [(ngModel)]="user.motDePasse" type="password" id="password" name="password" placeholder="Mots De Passe" required>
+            @if (user.motDePasse && !isValidPassword()) {
+              <p style="color: white;">Le mot de passe possède de 12 caractères de type différent
+                (majuscules, minuscules, chiffres, caractères spéciaux)</p>
+            }
           </div>
-          <button type="submit" class="submit-btn">S'inscrire</button>
+          <button (click)="onSubmit()" type="submit" class="submit-btn">S'inscrire</button>
           <button style="margin-top: 10px;" type="submit" class="submit-btn"><a style="color: white; text-decoration: none" routerLink="/login">Se connecter</a></button>
         </form>
       </div>
