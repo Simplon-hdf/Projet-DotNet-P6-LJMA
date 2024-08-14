@@ -1,0 +1,134 @@
+* {
+  font-family: 'Gelasio', sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+  .content {
+    width: 60%;
+    height: 50%;
+
+    .container .title {
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .container span {
+      display: block;
+      width: 53%;
+      height: 3px;
+      background-color: white;
+      z-index: 1000;
+    }
+
+    .container .desc {
+      color: white;
+      opacity: 40%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .container .link-res {
+      color: white;
+      opacity: 40%;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+
+      .link-res:hover {
+        color: white;
+        opacity: 100%;
+      }
+    }
+
+    .button-ls {
+      button {
+        border: none;
+        background-color: #166534;
+        color: white;
+        padding: 10px 15px;
+        margin-right: 20px;
+        font-family: 'Poppins', sans-serif;
+        transition: 500ms ease;
+      }
+
+      button:hover {
+        background-color: #052E16;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#menu {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+
+  .link {
+    width: fit-content;
+    margin-top: 200px;
+    margin-left: 60px;
+
+    li {
+      list-style-type: none;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 5vw;
+        margin: 10px;
+        transition: 800ms ease;
+
+        a:hover {
+          color: #0000ff;
+        }
+
+        a:active {
+          color: forestgreen;
+        }
+      }
+    }
+  }
+}
+
+.close .span1 {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin-top: 30px;
+  margin-right: 20px;
+  rotate: 40deg;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.close .span2 {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin-top: 30px;
+  margin-right: 20px;
+  rotate: -40deg;
+  cursor: pointer;
+  z-index: 1000;
+}
+
