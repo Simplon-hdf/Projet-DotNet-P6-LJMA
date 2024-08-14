@@ -1,9 +1,120 @@
 * {
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+app-header {
+  position: fixed;
+  z-index: 10000;
 }
 
 #home {
   width: 100%;
   height: 100vh;
+  background-image: url("https://marchedeviens.com/wp-content/uploads/2023/05/Dim-Rando.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .filter {
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+  }
+
+  .container {
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      position: absolute;
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 120px;
+        text-align: center;
+        line-height: 1em;
+        letter-spacing: -5px;
+        z-index: 1000;
+      }
+    }
+    .button-learn-more {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        position: absolute;
+        bottom: 30px;
+        border: none;
+        background-color: rgb(240, 253, 244, 0.6);
+        padding: 10px 15px;
+        transition: 500ms ease;
+
+        &:hover {
+          background-color: rgb(240, 253, 244, 100);
+          cursor: pointer;
+        }
+
+        a {
+          text-decoration: none;
+          color: #052E16;
+          font-family: 'Poppins', sans-serif;
+        }
+      }
+    }
+  }
+}
+#about {
+  width: 100%;
+  height: 100vh;
+
+  .container {
+    width: 100%;
+    height: 100%;
+
+    .titleOp {
+      position: absolute;
+      width: 100%;
+
+      h1 {
+        font-size: 200px;
+        color: rgba(100, 100 ,100, 0.3);
+        text-align: center;
+        font-weight: 100;
+      }
+    }
+    .title {
+      position: relative;
+      top: 120px;
+      left: 200px;
+      width: fit-content;
+      height: fit-content;
+
+      .who {
+        color: white;
+        font-size: 30px;
+        font-weight: 400;
+
+      }
+
+      .pres {
+        color: white;
+        font-size: 40px;
+        font-weight: 600;
+      }
+    }
+  }
 }
