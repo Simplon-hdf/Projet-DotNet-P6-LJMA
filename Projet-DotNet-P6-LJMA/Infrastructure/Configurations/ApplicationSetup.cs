@@ -24,11 +24,17 @@ namespace Projet_DotNet_P6_LJMA.Infrastructure.Configurations
                     policy.RequireRole(builder.Configuration["UserRoles:DefaultRole"]!));
             });
 
+            builder.Services.AddCors(options => // setting front
+            {
+                options.AddPolicy("AllowAngularApp", builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
+            });
+
             return builder;
         }
 
         public static WebApplication ConfigurePipeline(this WebApplication app)
         {
+            app.UseCors("AllowAngularApp"); // setting front
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -37,7 +43,7 @@ namespace Projet_DotNet_P6_LJMA.Infrastructure.Configurations
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.UseHttpsRedirection(); // setting front
             app.MapControllers();
 
             return app;
