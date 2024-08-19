@@ -1,0 +1,127 @@
+<div class="button-toggle">
+  <button (click)="displayType = 'randonnees'">Randonnées</button>
+  <button (click)="displayType = 'themes'">Thèmes</button>
+</div>
+
+@if(displayType === 'randonnees'){
+  <input type="text" [(ngModel)]="RandoFilter" class="search-bar" placeholder="Rechercher une Randonnée" (input)="applyRandoFilter()">
+  
+  <h2>Tableau des Randonnée</h2>
+  
+  <table>
+      <thead>
+        <tr class="tabHead">
+          <th>Description</th>
+          <th>Lieu</th>
+          <th>Limite de Participants</th>
+          <th>Jours</th>
+          <th>Nuits</th>
+          <th>Prix</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+          @for(randonnee of utilisateursRandoFiltre; track randonnee.id){
+              
+                <tr>
+                  <td>{{ randonnee.desc }}</td>
+                  <td>{{ randonnee.lieu }}</td>
+                  <td>{{ randonnee.limite_participant }}</td>
+                  <td>{{ randonnee.nb_jour }}</td>
+                  <td>{{ randonnee.nb_nuit }}</td>
+                  <td>{{ randonnee.prix }} €</td>
+                  <td>
+                    <button (click)="openEditRandoModal(randonnee)">Éditer</button>
+                    <button (click)="deleteRandonnee(randonnee.id!)">Supprimer</button>
+                  </td>
+                </tr>
+                <!-- <ng-container>
+                  @if(randonnee.id){
+                    <app-session [randonneeId]="randonnee.id"></app-session>
+                  }
+                </ng-container> -->
+                @if(randonnee.id){
+
+                    <td colspan="7">
+                      <app-session [randonneeId]="randonnee.id"></app-session>
+                    </td>
+                }
+              
+          }
+      </tbody>
+    </table>
+  
+    <div class="button-container">
+      <button (click)="openAddRandoModal()">Ajouter une Randonnée</button>
+    </div>  
+}
+
+@if(displayType === 'themes'){
+  <app-theme></app-theme>
+}
+  <!-- Modal EditRando -->
+  @if(isEditRandoModalOpen){
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeEditRandoModal()">&times;</span>
+        <h2>Modifier la Randonnée</h2>
+        <form (ngSubmit)="saveRandoChanges()">
+          <label for="desc">Description:</label>
+          <input type="text" id="desc" [(ngModel)]="selectedRandonnee!.desc" name="desc">
+    
+          <label for="lieu">Lieu:</label>
+          <input type="text" id="lieu" [(ngModel)]="selectedRandonnee!.lieu" name="lieu">
+    
+          <label for="limite_participant">Limite de Participants:</label>
+          <input type="number" id="limite_participant" [(ngModel)]="selectedRandonnee!.limite_participant" name="limite_participant">
+    
+          <label for="nb_jour">Nombre de Jours:</label>
+          <input type="number" id="nb_jour" [(ngModel)]="selectedRandonnee!.nb_jour" name="nb_jour">
+    
+          <label for="nb_nuit">Nombre de Nuits:</label>
+          <input type="number" id="nb_nuit" [(ngModel)]="selectedRandonnee!.nb_nuit" name="nb_nuit">
+    
+          <label for="prix">Prix:</label>
+          <input type="number" id="prix" [(ngModel)]="selectedRandonnee!.prix" name="prix">
+    
+          <button type="submit">Sauvegarder</button>
+        </form>
+      </div>
+    </div>
+  }
+  <!-- Fin Modal EditRando -->
+
+  <!-- Modal AddRando -->
+  @if(isAddRandoModalOpen){
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeAddRandoModal()">&times;</span>
+        <h2>Ajouter une Nouvelle Randonnée</h2>
+        <form (ngSubmit)="addRandonnee()">
+          <label for="desc">Description:</label>
+          <input type="text" id="desc" [(ngModel)]="newRandonnee.desc" name="desc" required>
+
+          <label for="image">Image URL:</label>
+          <input type="text" id="image" [(ngModel)]="newRandonnee.image" name="image" placeholder="URL de l'image" required>
+    
+          <label for="lieu">Lieu:</label>
+          <input type="text" id="lieu" [(ngModel)]="newRandonnee.lieu" name="lieu" required>
+    
+          <label for="limite_participant">Limite de Participants:</label>
+          <input type="number" id="limite_participant" [(ngModel)]="newRandonnee.limite_participant" name="limite_participant" required>
+    
+          <label for="nb_jour">Nombre de Jours:</label>
+          <input type="number" id="nb_jour" [(ngModel)]="newRandonnee.nb_jour" name="nb_jour" required>
+    
+          <label for="nb_nuit">Nombre de Nuits:</label>
+          <input type="number" id="nb_nuit" [(ngModel)]="newRandonnee.nb_nuit" name="nb_nuit" required>
+    
+          <label for="prix">Prix:</label>
+          <input type="number" id="prix" [(ngModel)]="newRandonnee.prix" name="prix" required>
+    
+          <button type="submit">Ajouter</button>
+        </form>
+      </div>
+    </div>
+  }
+  <!-- Fin Modal AddRando-->

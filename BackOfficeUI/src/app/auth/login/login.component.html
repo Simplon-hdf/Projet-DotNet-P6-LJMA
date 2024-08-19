@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Connexion</h1>
+
+  <form>
+    <input type="text" [(ngModel)]="user.login" name="utilisateur" placeholder="Utilisateur">
+    @if (user.login && !isValidLogin()) {
+      <p>Le login n'est pas valide (mail)</p>
+    }
+    
+    <input type="password" [(ngModel)]="user.motDePasse" name="motDePasse" placeholder="Mots de passe">
+    @if (user.motDePasse && !isValidPassword()) {
+      <p>Le mot de passe possède de 12 caractères de type différent
+        (majuscules, minuscules, chiffres, caractères spéciaux)</p>
+    }
+
+    <input type="submit" (click)="onSubmit()" class="btn" value="Se connecter">
+  </form>
+</div>
