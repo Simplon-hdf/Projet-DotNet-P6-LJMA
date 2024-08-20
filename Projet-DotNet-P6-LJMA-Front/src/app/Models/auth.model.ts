@@ -1,4 +1,4 @@
 export interface UserCredentials {
-  login?: string;
+  email?: string;
   motDePasse?: string;
 }
