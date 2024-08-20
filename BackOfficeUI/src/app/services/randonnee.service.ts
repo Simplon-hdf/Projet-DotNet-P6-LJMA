@@ -12,7 +12,7 @@ export class RandonneeService {
 
   constructor(private http: HttpClient) {}
 
-   getRandonees(): Observable<Randonnee[]> {
+   getRandonnees(): Observable<Randonnee[]> {
     return this.http.get<Randonnee[]>(this.apiUrl);
   }
 
