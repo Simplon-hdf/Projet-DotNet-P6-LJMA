@@ -48,10 +48,10 @@
   background-color: #e0e0e0; 
 }
 
-.sidebar ul li.active a {
-  color: #fff; 
-  background-color: #333;
-  border-radius: 5px;
+.sidebar ul li a.active {
+  color: #333; /* Couleur du texte */
+  background-color: #e0e0e0; /* Couleur de fond */
+  border-radius: 5px; /* Arrondir les coins */
 }
 
 .logout {
