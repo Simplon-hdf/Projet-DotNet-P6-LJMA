@@ -1,26 +1,26 @@
-<section id="register">
-  <div class="container">
-    <div class="card">
-      <div class="form-connexion">
-        <form class="login-form">
-          <h2>Connexion</h2>
-          <div class="input-group">
-            <input type="text" [(ngModel)]="user.login" id="lname" name="prenom" placeholder="E-Mail" required>
-            @if (user.login && !isValidLogin()) {
-              <p style="color: white;">Le login n'est pas valide (mail)</p>
-            }
-          </div>
-          <div class="input-group">
-            <input type="password" [(ngModel)]="user.motDePasse" id="password" name="password" placeholder="Mots De Passe" required>
-            @if (user.motDePasse && !isValidPassword()) {
-              <p style="color: white;">Le mot de passe possède de 12 caractères de type différent
-                (majuscules, minuscules, chiffres, caractères spéciaux)</p>
-            }
-          </div>
-          <button (click)="onSubmit()" type="button" class="submit-btn">Se connecter</button>
-          <button routerLink="/signup" style="margin-top: 10px;" type="submit" class="submit-btn"><a style="color: white; text-decoration: none" >S'inscrire</a></button>
-        </form>
+<section>
+  <div id="card">
+    <button routerLink="/home" class="close">X</button>
+    <h3>Connexion</h3>
+    <form #form="ngForm" (submit)="onSubmit(form)">
+      <div class="card-mail">
+        <input type="email" name="mail" id="loginMail"
+               #mail="ngModel"
+               [(ngModel)]="user.email"
+               placeholder="E-mail" required />
+        @if (user.email && !isValidLogin()){
+          <p style="position: relative; margin-bottom: 10px; margin-left: 20px; color: red;">L'email n'est pas valide</p>
+        }
       </div>
-    </div>
+      <div class="card-pass">
+        <input type="password" name="motDePasse" id="loginMotdePasse"
+               #motDePasse="ngModel"
+               [(ngModel)]="user.motDePasse"
+               placeholder="Mot de passe" required />
+      </div>
+      <div class="card-submit">
+        <input class="submit" type="submit" value="Se connecter" />
+      </div>
+    </form>
   </div>
 </section>
