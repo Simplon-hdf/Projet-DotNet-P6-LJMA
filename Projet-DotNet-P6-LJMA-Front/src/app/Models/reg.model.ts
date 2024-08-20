@@ -1,7 +1,7 @@
-export interface UserRegister {
+export class UserRegister {
   nom?: string;
   prenom?: string;
   email?: string;
-  tel?: string;
+  telephone?: string;
   motDePasse?: string;
 }
