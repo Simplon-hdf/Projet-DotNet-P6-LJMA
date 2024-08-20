@@ -1,0 +1,15 @@
+.app-container {
+    display: flex; /* Utilise Flexbox pour aligner les enfants horizontalement */
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  }
+  
+  app-sidebar {
+    width: 250px; /* Largeur fixe pour la sidebar */
+    flex-shrink: 0; /* Empêche la réduction de la sidebar */
+  }
+  
+  .content {
+    flex-grow: 1; /* Permet au contenu de prendre tout l'espace restant */
+    padding: 20px; /* Ajoute un espacement autour du contenu */
+    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+  }
