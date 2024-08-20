@@ -1,7 +1,8 @@
-import {Component, Injectable, OnInit} from '@angular/core';
-import { RouterLink, RouterOutlet } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from "@angular/router";
 import { FormsModule, NgForm } from "@angular/forms";
 import { FormRegisterService } from "../../Services/form-register.service";
+import { UserRegister } from "../../Models/reg.model";
 
 @Component({
   selector: 'app-register',
@@ -15,16 +16,28 @@ import { FormRegisterService } from "../../Services/form-register.service";
   styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {
-  constructor(public service : FormRegisterService ) {}
+  user: UserRegister = {};
+  constructor(public service : FormRegisterService, public router: Router ) {}
 
   onSubmit(form: NgForm){
     this.service.postEnregistrer()
       .subscribe({
-        next:res => {
+        next: res => {
           console.log(res)
+          this.router.navigate(['/home']);
         },
-        error:err=>{console.log(err)}
+        error: err =>{console.log(err)}
       })
+  }
+
+  isValidLogin(): boolean{
+    const valideurUtilisateur : RegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    return valideurUtilisateur.test(this.user.email!);
+  }
+
+  isValidPassword(): boolean{
+    const valideurMotDePasse  : RegExp = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[\w!@#$%^&*(),.?":{}|<>]{12,}$/gm;
+    return valideurMotDePasse.test(this.user.motDePasse!);
   }
 
   ngOnInit() {}
