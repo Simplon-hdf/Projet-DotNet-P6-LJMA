@@ -1,5 +1,6 @@
 <section>
   <div id="card">
+    <button routerLink="/home" class="close">X</button>
     <h3> Créer un compte</h3>
     <form #form="ngForm" (submit)="onSubmit(form)">
       <div class="card-nom">
@@ -18,7 +19,11 @@
       <input type="email" name="mail" id="inscriptionMail"
              #mail="ngModel"
              [(ngModel)]="service.FormData.email"
+             [(ngModel)]="user.email"
              placeholder="E-mail" required />
+        @if (user.email && !isValidLogin()){
+          <p style="position: relative; margin-bottom: 10px; margin-left: 20px; color: red;">L'email n'est pas valide</p>
+        }
       </div>
       <div class="card-tel">
       <input type="text" name="telephone" id=""

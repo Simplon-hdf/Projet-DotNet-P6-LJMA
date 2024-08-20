@@ -13,6 +13,6 @@ export class FormRegisterService {
   constructor(public http: HttpClient) {}
 
   postEnregistrer() {
-    return this.http.post(this.Url, this.FormData);
+    return this.http.post(this.Url, this.FormData)
   }
 }

@@ -14,7 +14,8 @@ section {
   #card {
     border-radius: 5px;
     width: 400px;
-    height: 500px;
+    height: fit-content;
+    padding: 30px 10px;
     background-color: rgb(22, 101, 52, 0.3);
     filter: drop-shadow(0 0 0.75rem rgb(22, 101, 52, 0.4));
     display: flex;
@@ -26,7 +27,22 @@ section {
       color: white;
       font-size: 30px;
       position: relative;
-      bottom: 30px;
+      bottom: 15px;
+    }
+
+    .close {
+      width: fit-content;
+      border: none;
+      background: transparent;
+      font-size: 20px;
+      position: relative;
+      top: -25px;
+      left: -5px;
+      color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     input {
@@ -37,6 +53,10 @@ section {
       margin-bottom: 15px;
       margin-left: 15px;
       padding: 5px;
+
+      &:focus {
+        outline: none;
+      }
     }
 
     .submit {
@@ -44,6 +64,8 @@ section {
       background-color: #FEFEE2;
       transition: 800ms ease;
       width: 92%;
+      height: 40px;
+      text-align: center;
 
       &:hover {
         color: white;
