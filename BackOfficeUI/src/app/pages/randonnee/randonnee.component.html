@@ -46,35 +46,8 @@
 }
 
 @if(displayType === 'themes'){
-  <input type="text" [(ngModel)]="themeFilter" class="search-bar" placeholder="Rechercher un Thème" (input)="applyThemeFilter()">
-
-  <h2>Tableau des Thèmes</h2>
-
-  <table>
-    <thead>
-      <tr class="tabHead">
-        <th>Nom du Thème</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for(theme of utilisateursThemeFiltre; track theme.id){
-        <tr>
-          <td>{{ theme.nom }}</td>
-          <td>
-            <button (click)="openEditThemeModal(theme)">Éditer</button>
-            <button (click)="deleteTheme(theme.id!)">Supprimer</button>
-          </td>
-        </tr>
-      }
-    </tbody>
-  </table>
-
-  <div class="button-container">
-    <button (click)="openAddThemeModal()">Ajouter un Theme</button>
-  </div> 
+  <app-theme></app-theme>
 }
-
   <!-- Modal EditRando -->
   @if(isEditRandoModalOpen){
     <div class="modal">
@@ -141,35 +114,3 @@
     </div>
   }
   <!-- Fin Modal AddRando-->
-
-  <!-- Modal EditTheme -->
-  @if(isEditThemeModalOpen){
-    <div class="modal">
-      <div class="modal-content">
-        <span class="close" (click)="closeEditThemeModal()">&times;</span>
-        <h2>Modifier le Theme</h2>
-        <form (ngSubmit)="saveThemeChanges()">
-          <label for="nom">Nom:</label>
-          <input type="text" id="desc" [(ngModel)]="selectedTheme!.nom" name="nom">    
-          <button type="submit">Sauvegarder</button>
-        </form>
-      </div>
-    </div>
-  }
-  <!-- Fin Modal EditTheme -->
-
-  <!-- Modal AddTheme -->
-  @if(isAddThemeModalOpen){
-    <div class="modal">
-      <div class="modal-content">
-        <span class="close" (click)="closeAddThemeModal()">&times;</span>
-        <h2>Ajouter un Nouveau Theme</h2>
-        <form (ngSubmit)="addTheme()">
-          <label for="desc">Nom:</label>
-          <input type="text" id="desc" [(ngModel)]="newTheme.nom" name="nom" required>
-          <button type="submit">Ajouter</button>
-        </form>
-      </div>
-    </div>
-  }
-  <!-- Fin Modal AddTheme-->
