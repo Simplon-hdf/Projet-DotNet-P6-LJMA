@@ -1,44 +1,42 @@
-<section id="register">
-  <div class="container">
-    <div class="card">
-      <div class="form-connexion">
-        <form class="login-form">
-          <h2>Inscription</h2>
-          <div class="input-group">
-            <input [(ngModel)]="user.nom" type="text" id="nom" name="nom" placeholder="Nom" required>
-            @if (user.nom == ""){
-              <p style="color: red;">Champs obligatoire</p>
-            }
-          </div>
-          <div class="input-group">
-            <input [(ngModel)]="user.prenom" type="text" id="prenom" name="prenom" placeholder="Prénom" required>
-            @if (user.prenom == ""){
-              <p style="color: red;">Champs obligatoire</p>
-            }
-          </div>
-          <div class="input-group">
-            <input [(ngModel)]="user.email" type="text" id="e-mail" name="e-mail" placeholder="E-mail" required>
-            @if (user.email && !isValidMail()) {
-              <p style="color: white;">L'adresse mail n'est pas valide</p>
-            }
-          </div>
-          <div class="input-group">
-            <input [(ngModel)]="user.tel" type="text" id="tel" name="telephone" placeholder="Téléphone" required>
-            @if (user.tel && !isValidNumber()) {
-              <p style="color: white;">Numéro de téléphone invalide.<br>Veuillez entrer un numéro de téléphone français valide.</p>
-            }
-          </div>
-          <div class="input-group">
-            <input [(ngModel)]="user.motDePasse" type="password" id="password" name="password" placeholder="Mots De Passe" required>
-            @if (user.motDePasse && !isValidPassword()) {
-              <p style="color: white;">Le mot de passe doit posséder 12 caractères de type différent
-                (majuscules, minuscules, chiffres, caractères spéciaux)</p>
-            }
-          </div>
-          <button (click)="onSubmit()" type="submit" class="submit-btn">S'inscrire</button>
-          <button routerLink="/login" style="margin-top: 10px;" type="submit" class="submit-btn"><a style="color: white; text-decoration: none">Se connecter</a></button>
-        </form>
+<section>
+  <div id="card">
+    <h3> Créer un compte</h3>
+    <form #form="ngForm" (submit)="onSubmit(form)">
+      <div class="card-nom">
+        <input type="text" name="nom" id="inscriptionNom"
+               #nom="ngModel"
+               [(ngModel)]="service.FormData.nom"
+               placeholder="Nom" required />
       </div>
-    </div>
+      <div class="card-prenom">
+      <input type="text" name="prenom" id="inscriptionPrenom"
+             #prenom="ngModel"
+             [(ngModel)]="service.FormData.prenom"
+             placeholder="Prénom" required />
+      </div>
+      <div class="card-mail">
+      <input type="email" name="mail" id="inscriptionMail"
+             #mail="ngModel"
+             [(ngModel)]="service.FormData.email"
+             placeholder="E-mail" required />
+      </div>
+      <div class="card-tel">
+      <input type="text" name="telephone" id=""
+             #telephone="ngModel"
+             [(ngModel)]="service.FormData.telephone"
+             placeholder="Téléphone" required />
+      </div>
+      <div class="card-pass">
+      <input type="password" name="motDePasse" id="inscriptionMotdePasse"
+             #motDePasse="ngModel"
+             [(ngModel)]="service.FormData.motDePasse"
+             minlength="8" placeholder="Mots De Passe"  required />
+      </div>
+
+      <input type="password" name="inscriptionConfirmationMotdePasse" id="inscriptionConfirmationMotdePasse" placeholder="Confirmez-Votre Mots De Passe" required />
+      <div class="card-submit">
+      <input class="submit" type="submit" value="Creer un compte" />
+      </div>
+    </form>
   </div>
 </section>
