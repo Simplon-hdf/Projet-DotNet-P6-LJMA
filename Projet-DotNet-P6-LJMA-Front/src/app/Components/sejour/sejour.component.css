@@ -1,6 +1,6 @@
 #sejour {
-  width: 100%;
-  height: 100vh;
+  width: fit-content;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
