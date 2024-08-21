@@ -3,6 +3,7 @@ using Projet_DotNet_P6_LJMA.Shared.DTOs;
 using Projet_DotNet_P6_LJMA.Infrastructure.Data.Models;
 using Projet_DotNet_P6_LJMA.Modules.UtilisateurModule.Repositories;
 using Projet_DotNet_P6_LJMA.Infrastructure.Configurations;
+using Projet_DotNet_P6_LJMA.Shared.Helpers;
 
 namespace Projet_DotNet_P6_LJMA.Modules.UtilisateurModule.Services
 {
@@ -18,6 +19,7 @@ namespace Projet_DotNet_P6_LJMA.Modules.UtilisateurModule.Services
 
         public async Task CreateAsync(UtilisateurCreatedDTO utilisateurDto)
         {
+            utilisateurDto.MotDePasse = PasswordHasher.HashPassword(utilisateurDto.MotDePasse);
             Utilisateur utilisateur = utilisateurDto.Map();
             utilisateur.Role = _defaultRole;
             await _utilisateurRepository.CreateAsync(utilisateur);
