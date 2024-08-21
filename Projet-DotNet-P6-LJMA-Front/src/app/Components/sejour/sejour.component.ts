@@ -18,23 +18,25 @@ import {NgForOf} from "@angular/common";
 })
 
 export class SejourComponent {
-  title = 'Randonnées';
   randos: Randonnee[] = [];
+  error: string = " ";
 
   constructor(private randonneeService: RandonneeService) {}
 
   ngOnInit(): void {
-    this.getRandos();
+    this.loadRandonnee();
   }
 
-  getRandos(): void {
-    this.randonneeService.getRandos().subscribe(
-      (result: Randonnee[]) => {
-        this.randos = result;
+  loadRandonnee(): void {
+    this.randonneeService.getRandos().subscribe({
+      next: (data) => {
+        this.randos = data;
+        console.log('Randonnées chargées:', this.randos);
       },
-      (error) => {
-        console.error('Error fetching randos:', error);
+      error: (err) => {
+        this.error = 'Erreur lors du chargement des randonnées';
+        console.error('Erreur:', err);
       }
-    );
+    });
   }
 }
