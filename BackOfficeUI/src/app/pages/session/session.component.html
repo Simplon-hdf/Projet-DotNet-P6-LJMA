@@ -1,0 +1,89 @@
+<div class="button-container" style="text-align: right;">
+  <button (click)="toggleSessionsVisibility()">
+    {{ areSessionsVisible ? 'X' : 'Afficher les Sessions' }}
+  </button>
+</div>
+
+@if(areSessionsVisible){
+  <div>
+    <table class="sub-table">
+      <thead>
+        <tr>
+          <th>Nom de la Session</th>
+          <th>Date Début</th>
+          <th>Date Fin</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(session of sessions; track session.id){
+          <tr>
+            <td>{{ session.nom }}</td>
+            <td>{{ session.date_debut }}</td>
+            <td>{{ session.date_fin }}</td>
+            <td>
+              <!-- Boutons d'action -->
+              <button (click)="editSession(session)">Éditer</button>
+              <button (click)="deleteSession(session.id!)">Supprimer</button>
+            </td>
+          </tr>
+      }
+      </tbody>
+    </table>
+    <!-- Bouton pour ajouter une nouvelle session -->
+    <div class="button-container">
+      <button (click)="openAddSessionModal()">Ajouter une Session</button>
+    </div>
+  </div>
+}
+
+<!-- Modal AddSession -->
+<div *ngIf="isAddSessionModalOpen" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeAddSessionModal()">&times;</span>
+    <h3>Ajouter une Nouvelle Session</h3>
+    <form (ngSubmit)="addSession()">
+      <label for="newNom">Nom de la Session</label>
+      <input type="text" id="newNom" [(ngModel)]="newSession.nom" name="newNom" required>
+
+      <label for="newDateDebut">Date Début</label>
+      <input type="date" id="newDateDebut" [(ngModel)]="newSession.date_debut" name="newDateDebut" required>
+
+      <label for="newDateFin">Date Fin</label>
+      <input type="date" id="newDateFin" [(ngModel)]="newSession.date_fin" name="newDateFin" required>
+
+      <label for="newTheme">Thème</label>
+      <select id="newTheme" [(ngModel)]="newSession.themeId" name="newTheme" required>
+        <option *ngFor="let theme of themes" [value]="theme.id">{{ theme.nom }}</option>
+      </select>
+
+      <div class="spacing"></div>
+      
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+</div>
+<!-- Fin Modal AddSession -->
+
+<!-- Modal EditSession -->
+@if(isEditSessionModalOpen){
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeEditSessionModal()">&times;</span>
+      <h2>Modifier le Session</h2>
+      <form (ngSubmit)="saveSessionChanges()">
+        <label for="nom">Nom:</label>
+        <input type="text" id="desc" [(ngModel)]="selectedSession!.nom" name="nom">
+        
+        <label for="dateDebut">Date Début</label>
+        <input type="date" id="dateDebut" [(ngModel)]="selectedSession!.date_debut" name="date_debut">
+  
+        <label for="dateFin">Date Fin</label>
+        <input type="date" id="dateFin" [(ngModel)]="selectedSession!.date_fin" name="date_fin">
+
+        <button type="submit">Sauvegarder</button>
+      </form>
+    </div>
+  </div>
+}
+<!-- Fin Modal EditSession -->

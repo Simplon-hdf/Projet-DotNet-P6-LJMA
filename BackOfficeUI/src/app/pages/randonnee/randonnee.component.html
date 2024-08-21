@@ -22,7 +22,7 @@
       </thead>
       <tbody>
           @for(randonnee of utilisateursRandoFiltre; track randonnee.id){
-              <ng-container >
+              
                 <tr>
                   <td>{{ randonnee.desc }}</td>
                   <td>{{ randonnee.lieu }}</td>
@@ -35,7 +35,18 @@
                     <button (click)="deleteRandonnee(randonnee.id!)">Supprimer</button>
                   </td>
                 </tr>
-              </ng-container>
+                <!-- <ng-container>
+                  @if(randonnee.id){
+                    <app-session [randonneeId]="randonnee.id"></app-session>
+                  }
+                </ng-container> -->
+                @if(randonnee.id){
+
+                    <td colspan="7">
+                      <app-session [randonneeId]="randonnee.id"></app-session>
+                    </td>
+                }
+              
           }
       </tbody>
     </table>

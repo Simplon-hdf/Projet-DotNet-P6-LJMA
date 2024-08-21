@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
-import { Randonnee } from '../../models/randonnee.model';
-import { Theme } from '../../models/theme.model';
+import { Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { CommonModule} from '@angular/common';
 
+import { Randonnee } from '../../models/randonnee.model';
 import { RandonneeService } from '../../services/randonnee.service';
-import { ThemeService } from '../../services/theme.service';
-import { Observable } from 'rxjs';
 import { ThemeComponent } from "../theme/theme.component";
+import { SessionComponent } from '../session/session.component';
 
 @Component({
   selector: 'app-randonnee',
   standalone: true,
-  imports: [SidebarComponent, FormsModule, CommonModule, ThemeComponent],
+  imports: [SidebarComponent, FormsModule, CommonModule, ThemeComponent, SessionComponent],
   templateUrl: './randonnee.component.html',
   styleUrl: './randonnee.component.css'
 })

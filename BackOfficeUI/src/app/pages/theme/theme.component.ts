@@ -21,6 +21,8 @@ export class ThemeComponent {
 
   themes: Theme[] = [];
 
+  areSessionsVisible: boolean = false;
+
   selectedTheme: Theme | null = null;
   isEditThemeModalOpen: boolean = false;
 
@@ -35,6 +37,10 @@ export class ThemeComponent {
 
   ngOnInit(): void {
     this.fetchThemes();
+  }
+
+  toggleSessionsVisibility(): void {
+    this.areSessionsVisible = !this.areSessionsVisible;
   }
 
     /* Methodes pour les Themes */
@@ -88,7 +94,7 @@ export class ThemeComponent {
 
     /* Fin Section Ajout de theme */
 
-      /* Section Edit de theme */
+    /* Section Edit de theme */
 
   openEditThemeModal(theme: Theme): void {
     this.selectedTheme = { ...theme }; // Clone les données pour éviter les modifications directes
