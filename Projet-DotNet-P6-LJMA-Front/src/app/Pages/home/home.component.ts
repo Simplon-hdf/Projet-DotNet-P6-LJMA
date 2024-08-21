@@ -2,12 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import { HeaderComponent } from "../../Components/header/header.component";
 import { ViewportScroller } from "@angular/common";
 import { Router } from "@angular/router";
+import {SejourComponent} from "../../Components/sejour/sejour.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     HeaderComponent,
+    SejourComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
