@@ -1,22 +1,22 @@
 <section id="sejour">
-  <div class="card">
+  <div class="card" *ngFor="let rando of randos">
     <div class="card-img">
       <img width="100%" height="100%" src="https://cdn.generationvoyage.fr/2020/08/Ardennes-IMEA.jpg" alt="">
       <div class="card-title-desc">
-        <p class="title">Lorem</p>
-        <p class="desc">Lorem Lorem Lorem Lorem</p>
+        <p class="title">{{ rando.lieu }}</p>
+        <p class="desc">{{ rando.desc }}</p>
       </div>
     </div>
     <div class="card-infos">
       <div class="content">
-        <p style="font-weight: 700;">0</p>
+        <p style="font-weight: 700;">{{ rando.nb_nuit }}</p>
         <p>nuits</p>
         <span></span>
-        <p style="font-weight: 700">0</p>
+        <p style="font-weight: 700;">0</p>
         <p>préstation</p>
         <span></span>
         <p>à partir de</p>
-        <p style="font-weight: 700">0€</p>
+        <p style="font-weight: 700; font-size: 13px; position: relative; bottom: 6px;">{{ rando.prix }}€</p>
       </div>
     </div>
   </div>
