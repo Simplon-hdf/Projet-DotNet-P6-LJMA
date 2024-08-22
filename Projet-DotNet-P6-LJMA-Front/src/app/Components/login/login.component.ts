@@ -26,19 +26,16 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (res: any) => {
           console.log(res);
+          alert('Succesfull');
           // Gérer la réponse de connexion réussie ici
           this.router.navigate(['/home']);
         },
         error: (err: HttpErrorResponse) => {
           console.log(err);
+          alert('Not connected');
           // Gérer les erreurs de connexion ici
         }
       });
-  }
-
-  isValidLogin(): boolean {
-    const valideurUtilisateur: RegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-    return valideurUtilisateur.test(this.user.email!);
   }
 
   ngOnInit() {}
