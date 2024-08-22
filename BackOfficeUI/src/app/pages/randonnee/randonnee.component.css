@@ -164,9 +164,9 @@ button[type="submit"]:hover {
 
 /* Styles pour les boutons généraux */
 button {
-  padding: 6px 12px;
   margin-right: 5px;
-  background-color: #4CAF50;
+  padding: 6px 12px;
+  background-color: #45a049;
   color: white;
   border: none;
   border-radius: 4px;
@@ -191,4 +191,21 @@ button:hover {
   .search-bar {
       max-width: 100%; /* Assure que la barre de recherche prend toute la largeur disponible */
   }
+}
+
+svg {
+  margin: 5px;
+}
+
+svg:hover {
+  fill: #45a049;
+  cursor: pointer; 
+}
+
+.deleteIcon {
+  fill: red
+}
+
+.deleteIcon:hover {
+  fill: rgb(212, 0, 0);
 }

@@ -145,3 +145,20 @@ button[type="submit"]:hover {
 .button-container button:hover {
     background-color: #2eb595; 
 }
+
+svg {
+    margin: 5px;
+  }
+  
+  svg:hover {
+    fill: #2eb595;
+    cursor: pointer; 
+  }
+  
+  .deleteIcon {
+    fill: red
+  }
+  
+  .deleteIcon:hover {
+    fill: rgb(212, 0, 0);
+  }
