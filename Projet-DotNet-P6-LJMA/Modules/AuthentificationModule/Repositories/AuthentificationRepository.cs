@@ -23,7 +23,8 @@ namespace Projet_DotNet_P6_LJMA.Modules.AuthentificationModule.Repositories
                 Id = u.Id,
                 Nom = u.Nom,
                 Prenom = u.Prenom,
-                MotDePasse = u.MotDePasse
+                MotDePasse = u.MotDePasse,
+                Role = u.Role
             }).FirstOrDefaultAsync();
 
         public async Task<bool> RegisterAsync(Utilisateur utilisateur)
