@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserCredentials } from '../../models/auth.model';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +13,17 @@ import { FormsModule } from '@angular/forms';
 export class LoginComponent implements OnInit
 { 
   user:UserCredentials = {};
+  constructor(
+    private router: Router
+  ){}
 
   onSubmit(): void {
     if(this.isValidLogin() && this.isValidPassword()){
       alert("user : "+this.user.login)
+
       //appel api
       //redirection Routerlink
+      this.router.navigate(['/general'])
     }
   }
 
