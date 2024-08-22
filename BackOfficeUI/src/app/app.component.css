@@ -10,7 +10,6 @@
   
   .content {
     flex-grow: 1; /* Permet au contenu de prendre tout l'espace restant */
-    padding: 20px; /* Ajoute un espacement autour du contenu */
     overflow-y: auto; /* Permet le défilement vertical si nécessaire */
     flex-direction: column; /* Colonne pour faciliter le responsive */
     max-width: calc(100% - 250px); /* Ajustez 250px selon la largeur de votre sidebar */
