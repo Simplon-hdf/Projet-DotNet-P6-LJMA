@@ -24,9 +24,10 @@ export class RegisterComponent implements OnInit {
       .subscribe({
         next: res => {
           console.log(res)
+          alert('Utilisateur crée');
           this.router.navigate(['/home']);
         },
-        error: err =>{console.log(err)}
+        error: err =>{console.log(err), alert('Utilisateur non crée');}
       })
   }
 
