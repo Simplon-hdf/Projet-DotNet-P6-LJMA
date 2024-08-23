@@ -16,6 +16,9 @@ export class SessionService {
     return this.http.get<Session[]>(this.apiUrl);
   }
 
+  getSessionById(sessionId: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${sessionId}`);
+  }
 
   addSession(Session: Session): Observable<Session> {
     return this.http.post<Session>(this.apiUrl, Session);

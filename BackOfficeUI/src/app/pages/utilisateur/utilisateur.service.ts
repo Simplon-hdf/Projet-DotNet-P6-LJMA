@@ -22,6 +22,10 @@ export class UtilisateurService {
     return this.http.get<User[]>(this.BASE_URL + '/Utilisateurs');
   }
 
+  getUserById(userId: string): Observable<any> {
+    return this.http.get<any>(`${this.BASE_URL}/Utilisateurs/${userId}`);
+  }
+
   putUser(userUpdated: User) {
     return this.http.put(this.BASE_URL+'/Utilisateurs', userUpdated);
   }

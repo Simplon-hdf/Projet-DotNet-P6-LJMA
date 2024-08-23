@@ -1,0 +1,38 @@
+<div class="details-session-container">
+    <h2>Détails de la Session</h2>
+  
+    @if(session){
+        <div class="session-info">
+          <h3>{{ session.nom }}</h3>
+          <p>Date de début : {{ session.date_debut }}</p>
+          <p>Date de fin : {{ session.date_fin }}</p>
+        </div>
+    }
+  
+    <h3>Utilisateurs inscrits</h3>
+    @if(users && users.length > 0){
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Email</th>
+              <th>Tel</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(user of users; track user.id){
+                <tr>
+                  <td>{{ user.nom }}</td>
+                  <td>{{ user.prenom }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.telephone }}</td>
+                </tr>
+            }
+          </tbody>
+        </table>
+    }
+    @if(!users || users.length === 0){
+        <p class="no-users-message">Aucun utilisateur inscrit à cette session.</p>
+    }
+</div>
