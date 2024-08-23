@@ -48,3 +48,4 @@ app-sidebar {
     max-width: calc(100% - 250px); /* Ajustez 250px selon la largeur de votre sidebar */
     margin-left: auto; /* Centre le contenu par rapport à la sidebar */
   }
+}
