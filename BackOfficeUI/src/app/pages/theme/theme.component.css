@@ -150,6 +150,23 @@ button:hover {
   margin-top: 20px; 
 }
 
+svg {
+  margin: 5px;
+}
+
+svg:hover {
+  fill: #45a049;
+  cursor: pointer; 
+}
+
+.deleteIcon {
+  fill: red
+}
+
+.deleteIcon:hover {
+  fill: rgb(212, 0, 0);
+}
+
 /* Media queries pour la responsivité */
 @media screen and (max-width: 768px) {
   table {
