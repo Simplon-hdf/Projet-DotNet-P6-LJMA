@@ -3,6 +3,9 @@
   <div class="filter"></div>
   <div class="container">
     <div class="title">
+      @if (loginService.user()){
+        <h2 style="position: absolute; top: -10px;">Bienvenue {{loginService.user()!.unique_name}} {{loginService.user()!.given_name}}</h2>
+      }
       <h1>MARCHE<br>& DEVIENS</h1>
     </div>
     <div class="button-learn-more">
