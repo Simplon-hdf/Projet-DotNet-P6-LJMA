@@ -1,18 +1,15 @@
-<div class="container">
-  <h1>Connexion</h1>
-
-  <form>
-    <input type="text" [(ngModel)]="user.login" name="utilisateur" placeholder="Utilisateur">
-    @if (user.login && !isValidLogin()) {
-      <p>Le login n'est pas valide (mail)</p>
+<form class="container" (submit)="login()" [formGroup]="loginFormGroup">
+    <h3>Login</h3>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Mot de passe</mat-label>
+      <input matInput type="password" formControlName="motdepasse" />
+    </mat-form-field>
+    <button mat-flat-button [disabled]="loginFormGroup.invalid">Login</button>
+    @if (invalidCredentials) {
+    <mat-error>Invalid credentials</mat-error>
     }
-    
-    <input type="password" [(ngModel)]="user.motDePasse" name="motDePasse" placeholder="Mots de passe">
-    @if (user.motDePasse && !isValidPassword()) {
-      <p>Le mot de passe possède de 12 caractères de type différent
-        (majuscules, minuscules, chiffres, caractères spéciaux)</p>
-    }
-
-    <input type="submit" (click)="onSubmit()" class="btn" value="Se connecter">
-  </form>
-</div>
+</form>
