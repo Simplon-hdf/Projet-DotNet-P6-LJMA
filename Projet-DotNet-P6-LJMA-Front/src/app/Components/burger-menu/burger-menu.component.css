@@ -53,6 +53,9 @@
     }
 
     .button-ls {
+      display: flex;
+      width: 500px;
+
       button {
         border: none;
         background-color: #448B5C;
