@@ -1,3 +1,16 @@
+/* Styles pour le bouton hamburger */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -68,3 +81,4 @@
 .logout a:hover {
   color: #007bff;
 }
+
