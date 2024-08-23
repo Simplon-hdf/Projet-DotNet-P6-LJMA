@@ -1,26 +1,26 @@
-import {inject, Injectable, signal} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {JwtHelperService} from "@auth0/angular-jwt";
-import {UserRegister} from "../Models/reg.model";
-import {map, Observable, tap} from "rxjs";
+import { inject, Injectable, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { UserRegister } from '../Models/reg.model';
+import { map, Observable, tap } from 'rxjs';
 
 export interface CredentialsOnToken {
-  nameid:any,
-  unique_name:string,
-  given_name:string
-  role:string,
-  nbf:number,
-  exp:number,
-  iat:number
+  nameid: any;
+  unique_name: string;
+  given_name: string;
+  role: string;
+  nbf: number;
+  exp: number;
+  iat: number;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RegisterService {
   private http = inject(HttpClient);
-  private BASE_URL = 'https://tj51dj99-5101.euw.devtunnels.ms';
-  user = signal<CredentialsOnToken | null | undefined >(undefined);
+  private BASE_URL = 'http://localhost:5101';
+  user = signal<CredentialsOnToken | null | undefined>(undefined);
 
   getToken(): string | null {
     const token = localStorage.getItem('token');
@@ -44,13 +44,15 @@ export class RegisterService {
     return null;
   }
 
-  register(credentials: UserRegister){
+  register(credentials: UserRegister) {
     return this.http.post(this.BASE_URL + '/Utilisateurs', credentials).pipe(
       tap((result: any) => {
         localStorage.setItem('token', result.token);
         this.user.set(this.decodedToken());
       }),
-      map((result: any) => {return this.user()})
+      map((result: any) => {
+        return this.user();
+      })
     );
   }
 
@@ -58,5 +60,4 @@ export class RegisterService {
     localStorage.removeItem('token');
     this.user.set(undefined);
   }
-
 }
