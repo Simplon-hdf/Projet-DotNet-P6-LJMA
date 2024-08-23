@@ -37,19 +37,14 @@ app-sidebar {
   }
 
   app-sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    transform: translateX(-100%);
-    z-index: 1000;
+    width: 250px; /* Largeur fixe pour la sidebar */
+    flex-shrink: 0; /* Empêche la réduction de la sidebar */
   }
-
-  app-sidebar.open {
-    transform: translateX(0);
+  
+  .content {
+    flex-grow: 1; /* Permet au contenu de prendre tout l'espace restant */
+    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+    flex-direction: column; /* Colonne pour faciliter le responsive */
+    max-width: calc(100% - 250px); /* Ajustez 250px selon la largeur de votre sidebar */
+    margin-left: auto; /* Centre le contenu par rapport à la sidebar */
   }
-
-  .main-content {
-    margin-left: 0 !important;
-  }
-}
