@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace Projet_DotNet_P6_LJMA.Infrastructure.Data.Models
+namespace Projet_DotNet_P6_LJMA.Models
 {
     [Table("post")]
     public class Post

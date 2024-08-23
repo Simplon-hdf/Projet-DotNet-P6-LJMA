@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Projet_DotNet_P6_LJMA.Infrastructure.Configurations;
-using Projet_DotNet_P6_LJMA.Infrastructure.Data.Models;
+using Projet_DotNet_P6_LJMA.Models;
 using Projet_DotNet_P6_LJMA.Shared.Helpers;
 
-namespace Projet_DotNet_P6_LJMA.Infrastructure.Data
+namespace Projet_DotNet_P6_LJMA.Data
 {
     public class DataSeeder
     {

@@ -1,4 +1,4 @@
-﻿using Projet_DotNet_P6_LJMA.Infrastructure.Data.Models;
+﻿using Projet_DotNet_P6_LJMA.Models;
 
 namespace Projet_DotNet_P6_LJMA.Modules.RandonneeModule.Repositories
 {

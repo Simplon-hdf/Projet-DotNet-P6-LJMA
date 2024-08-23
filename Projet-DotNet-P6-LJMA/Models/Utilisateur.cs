@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Projet_DotNet_P6_LJMA.Shared.Attributes;
 using Microsoft.EntityFrameworkCore;
 
-namespace Projet_DotNet_P6_LJMA.Infrastructure.Data.Models
+namespace Projet_DotNet_P6_LJMA.Models
 {
     [Table("utilisateur")]
     public class Utilisateur

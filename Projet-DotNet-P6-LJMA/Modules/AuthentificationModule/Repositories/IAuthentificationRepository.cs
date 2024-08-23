@@ -1,4 +1,4 @@
-﻿using Projet_DotNet_P6_LJMA.Infrastructure.Data.Models;
+﻿using Projet_DotNet_P6_LJMA.Models;
 using System.Linq.Expressions;
 
 namespace Projet_DotNet_P6_LJMA.Modules.AuthentificationModule.Repositories

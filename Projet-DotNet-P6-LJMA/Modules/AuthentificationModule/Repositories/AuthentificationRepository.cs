@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
-using Projet_DotNet_P6_LJMA.Infrastructure.Data;
-using Projet_DotNet_P6_LJMA.Infrastructure.Data.Models;
+using Projet_DotNet_P6_LJMA.Data;
+using Projet_DotNet_P6_LJMA.Models;
 
 namespace Projet_DotNet_P6_LJMA.Modules.AuthentificationModule.Repositories
 {

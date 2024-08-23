@@ -1,7 +1,7 @@
 ﻿using Projet_DotNet_P6_LJMA.Shared.Mapping;
 using Projet_DotNet_P6_LJMA.Shared.DTOs;
-using Projet_DotNet_P6_LJMA.Infrastructure.Data.Models;
 using Projet_DotNet_P6_LJMA.Modules.ReserverModule.Repositories;
+using Projet_DotNet_P6_LJMA.Models;
 
 namespace Projet_DotNet_P6_LJMA.Modules.ReserverModule.Services;
 
