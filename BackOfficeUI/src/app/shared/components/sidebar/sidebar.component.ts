@@ -10,7 +10,5 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  logout() {
-    console.log('Déconnexion');
-  }
+
 }
