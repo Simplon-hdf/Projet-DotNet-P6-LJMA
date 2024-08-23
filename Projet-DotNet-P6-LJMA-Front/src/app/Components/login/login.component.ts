@@ -1,42 +1,47 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink, RouterOutlet } from "@angular/router";
-import { FormsModule, NgForm } from "@angular/forms";
-import { FormLoginService } from "../../Services/form-login.service";
-import { UserCredentials } from "../../Models/auth.model";
-import { HttpErrorResponse } from '@angular/common/http';
+import { Component, inject, OnDestroy } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { LoginService} from "../../Services/login.service";
+import { UserCredentials} from "../../Models/auth.model";
+import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    RouterLink,
-    FormsModule,
-    RouterOutlet,
-  ],
+  imports: [ReactiveFormsModule, MatInputModule, MatButtonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
+export class LoginComponent implements OnDestroy {
+  private formBuilder = inject(FormBuilder);
+  private loginService = inject(LoginService);
+  private router = inject(Router);
+  private loginSubscription: Subscription | null = null;
 
-export class LoginComponent implements OnInit {
-  user: UserCredentials = {};
-  constructor(public service: FormLoginService, public router : Router) {}
+  loginFormGroup = this.formBuilder.group({
+    email: ['', [Validators.required]],
+    motdepasse: ['', [Validators.required]],
+  });
+  invalidCredentials = false;
 
-  onSubmit(form: NgForm) {
-    this.service.getLogin(this.user.email!, this.user.motDePasse!)
+  login() {
+    this.loginSubscription = this.loginService
+      .login(this.loginFormGroup.value as UserCredentials)
       .subscribe({
-        next: (res: any) => {
-          console.log(res);
-          alert('Succesfull');
-          // Gérer la réponse de connexion réussie ici
-          this.router.navigate(['/home']);
+        next: (result) => {
+          this.router.navigate(['home']);
         },
-        error: (err: HttpErrorResponse) => {
-          console.log(err);
-          alert('Not connected');
-          // Gérer les erreurs de connexion ici
-        }
+        error: (error) => {
+          // console.error(error.error.status);
+          // console.table(error.error.errors);
+          this.invalidCredentials = true;
+        },
       });
   }
 
-  ngOnInit() {}
+  ngOnDestroy(): void {
+    this.loginSubscription?.unsubscribe();
+  }
 }

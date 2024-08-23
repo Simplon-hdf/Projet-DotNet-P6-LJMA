@@ -1,77 +1,63 @@
-* {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
-section {
-  width: 100%;
-  height: 100vh;
-  background-color: #DDEBE2;
+form {
+  border: 2px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  width: 400px;
+}
 
-  #card {
-    border-radius: 5px;
-    width: 400px;
-    height: fit-content;
-    padding: 30px 10px;
-    background-color: rgb(22, 101, 52, 0.3);
-    filter: drop-shadow(0 0 0.75rem rgb(22, 101, 52, 0.4));
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+mat-form-field {
+  margin: 5px;
+}
 
-    h3 {
-      text-align: center;
-      color: white;
-      font-size: 30px;
-      position: relative;
-      bottom: 15px;
-    }
+mat-error {
+  text-align: center;
+}
 
-    .close {
-      width: fit-content;
-      border: none;
-      background: transparent;
-      font-size: 20px;
-      position: relative;
-      top: -25px;
-      left: -5px;
-      color: white;
+@media only screen and (max-width: 400px) {
+  .container {
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+  }
 
-      &:hover {
-        cursor: pointer;
-      }
-    }
+  form {
+    width: 100%;
+    padding: 20px 10px;
+    position: relative;
+    margin-right: 40px;
+    transform: scale(90%);
+    box-sizing: border-box;
+  }
 
-    input {
-      border: none;
-      border-radius: 5px;
-      width: 90%;
-      height: 25px;
-      margin-bottom: 15px;
-      margin-left: 15px;
-      padding: 5px;
+  mat-form-field {
+    margin: 10px 0;
+    width: 100%;
+  }
 
-      &:focus {
-        outline: none;
-      }
-    }
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0.5em;
+  }
 
-    .submit {
-      color: black;
-      background-color: #FEFEE2;
-      transition: 800ms ease;
-      width: 92%;
-      height: 40px;
-      text-align: center;
+  ::ng-deep .mat-form-field-infix {
+    padding: 0.5em 0;
+  }
 
-      &:hover {
-        color: white;
-        background-color: rgb(22, 101, 52, 0.3);
-        cursor: pointer;
-      }
-    }
+  ::ng-deep .mat-form-field-label-wrapper {
+    top: -1.5em;
+  }
+
+  mat-error {
+    font-size: 14px;
   }
 }
