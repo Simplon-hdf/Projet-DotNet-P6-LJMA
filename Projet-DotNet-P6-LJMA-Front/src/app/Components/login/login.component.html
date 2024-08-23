@@ -1,23 +1,16 @@
-<section>
-  <div id="card">
-    <button routerLink="/home" class="close">X</button>
-    <h3>Connexion</h3>
-    <form #form="ngForm" (submit)="onSubmit(form)">
-      <div class="card-mail">
-        <input type="email" name="mail" id="loginMail"
-               #mail="ngModel"
-               [(ngModel)]="user.email"
-               placeholder="E-mail" required />
-      </div>
-      <div class="card-pass">
-        <input type="password" name="motDePasse" id="loginMotdePasse"
-               #motDePasse="ngModel"
-               [(ngModel)]="user.motDePasse"
-               placeholder="Mot de passe" required />
-      </div>
-      <div class="card-submit">
-        <input class="submit" type="submit" value="Se connecter" />
-      </div>
-    </form>
-  </div>
-</section>
+<form class="container" (submit)="login()" [formGroup]="loginFormGroup">
+  <h3>Connexion</h3>
+  <br>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Mot de passe</mat-label>
+    <input matInput type="password" formControlName="motdepasse" />
+  </mat-form-field>
+  <button mat-flat-button [disabled]="loginFormGroup.invalid">Se connecter</button>
+  @if (invalidCredentials) {
+    <mat-error>Invalid credentials</mat-error>
+  }
+</form>
