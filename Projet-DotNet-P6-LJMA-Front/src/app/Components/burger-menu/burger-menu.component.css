@@ -16,7 +16,7 @@
 
   .content {
     width: 60%;
-    height: 50%;
+    height: fit-content;
 
     .container .title {
       color: black;
