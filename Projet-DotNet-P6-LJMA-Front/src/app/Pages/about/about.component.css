@@ -35,13 +35,13 @@ app-header {
       height: fit-content;
 
       .who {
-        color: white;
+        color: black;
         font-size: 30px;
         font-weight: 400;
       }
 
       .pres {
-        color: white;
+        color: black;
         font-size: 40px;
         font-weight: 600;
       }
@@ -63,7 +63,7 @@ app-header {
         margin-left: 20px;
         width: 500px;
         height: fit-content;
-        color: white;
+        color: black;
       }
     }
     .sejours {
@@ -82,7 +82,7 @@ app-header {
         height: fit-content;
 
         h1 {
-          color: white;
+          color: black;
           text-align: center;
           font-size: 30px;
           margin-bottom: 15px;
@@ -95,7 +95,7 @@ app-header {
         }
         .desc {
           margin-left: 0;
-          color: white;
+          color: black;
           text-align: center;
           width: 500px;
         }
@@ -115,6 +115,82 @@ app-header {
             text-decoration: none;
             color: #052E16;
             font-family: 'Poppins', sans-serif;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #about {
+    height: auto;
+    overflow-x: hidden;
+
+    .container {
+      .titleOp {
+        h1 {
+          font-size: 80px;
+        }
+      }
+
+      .title {
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+
+        .who {
+          font-size: 20px;
+        }
+
+        .pres {
+          font-size: 28px;
+        }
+      }
+
+      .content {
+        flex-direction: column;
+        align-items: center;
+        top: 100px;
+
+        .vid {
+          width: 90%;
+          height: 200px;
+        }
+
+        .desc {
+          margin-left: 0;
+          margin-top: 20px;
+          width: 90%;
+          text-align: center;
+        }
+      }
+
+      .sejours {
+        top: 120px;
+        display: block;
+        margin: 0;
+
+        .content {
+          width: 90%;
+
+          h1 {
+            font-size: 24px;
+          }
+
+          .pics {
+            width: 100%;
+            height: 200px;
+          }
+
+          .desc {
+            width: 100%;
+          }
+
+          button {
+            width: 100%;
+            margin-top: 20px;
           }
         }
       }
