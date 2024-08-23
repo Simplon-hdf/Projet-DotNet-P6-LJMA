@@ -1,43 +1,24 @@
-<section>
-  <div id="card">
-    <button routerLink="/home" class="close">X</button>
-    <h3> Créer un compte</h3>
-    <form #form="ngForm" (submit)="onSubmit(form)">
-      <div class="card-nom">
-        <input type="text" name="nom" id="inscriptionNom"
-               #nom="ngModel"
-               [(ngModel)]="service.FormData.nom"
-               placeholder="Nom" required />
-      </div>
-      <div class="card-prenom">
-      <input type="text" name="prenom" id="inscriptionPrenom"
-             #prenom="ngModel"
-             [(ngModel)]="service.FormData.prenom"
-             placeholder="Prénom" required />
-      </div>
-      <div class="card-mail">
-      <input type="email" name="mail" id="inscriptionMail"
-             #mail="ngModel"
-             [(ngModel)]="service.FormData.email"
-             placeholder="E-mail" required />
-      </div>
-      <div class="card-tel">
-      <input type="text" name="telephone" id=""
-             #telephone="ngModel"
-             [(ngModel)]="service.FormData.telephone"
-             placeholder="Téléphone" required />
-      </div>
-      <div class="card-pass">
-      <input type="password" name="motDePasse" id="inscriptionMotdePasse"
-             #motDePasse="ngModel"
-             [(ngModel)]="service.FormData.motDePasse"
-             minlength="8" placeholder="Mots De Passe"  required />
-      </div>
-
-      <input type="password" name="inscriptionConfirmationMotdePasse" id="inscriptionConfirmationMotdePasse" placeholder="Confirmez-Votre Mots De Passe" required />
-      <div class="card-submit">
-      <input class="submit" type="submit" value="Creer un compte" />
-      </div>
-    </form>
-  </div>
-</section>
+<form class="container" (submit)="register()" [formGroup]="registerFormGroup">
+  <h3>Inscription</h3>
+  <mat-form-field>
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="nom">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Prénom</mat-label>
+    <input matInput formControlName="prenom">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Téléphone</mat-label>
+    <input matInput formControlName="telephone">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Mot de passe</mat-label>
+    <input matInput type="password" formControlName="motdepasse" />
+  </mat-form-field>
+  <button mat-flat-button [disabled]="registerFormGroup.invalid">S'inscrire</button>
+</form>
