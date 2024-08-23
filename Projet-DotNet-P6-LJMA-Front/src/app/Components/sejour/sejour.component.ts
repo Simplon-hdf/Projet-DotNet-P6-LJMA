@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { FormsModule } from "@angular/forms";
 import {RandonneeService} from "../../Services/randonnee.service";
-import {Randonnee} from "../../Models/randonnee";
+import {Randonnee} from "../../Models/randonnee.model";
 import {NgForOf} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-sejour',
@@ -12,12 +13,13 @@ import {NgForOf} from "@angular/common";
     HeaderComponent,
     FormsModule,
     NgForOf,
+    RouterLink,
   ],
   templateUrl: './sejour.component.html',
   styleUrl: './sejour.component.css'
 })
 
-export class SejourComponent {
+export class SejourComponent implements OnInit{
   randos: Randonnee[] = [];
   error: string = " ";
 
