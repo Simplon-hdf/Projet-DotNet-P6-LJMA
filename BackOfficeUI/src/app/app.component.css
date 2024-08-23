@@ -33,19 +33,18 @@ app-sidebar {
     top: 10px;
     left: 10px;
     z-index: 1000;
-    /* autres styles du bouton hamburger */
   }
 
   app-sidebar {
-    width: 250px; /* Largeur fixe pour la sidebar */
-    flex-shrink: 0; /* Empêche la réduction de la sidebar */
+    width: 250px; 
+    flex-shrink: 0;
   }
   
   .content {
-    flex-grow: 1; /* Permet au contenu de prendre tout l'espace restant */
-    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
-    flex-direction: column; /* Colonne pour faciliter le responsive */
-    max-width: calc(100% - 250px); /* Ajustez 250px selon la largeur de votre sidebar */
-    margin-left: auto; /* Centre le contenu par rapport à la sidebar */
+    flex-grow: 1;
+    overflow-y: auto;
+    flex-direction: column; 
+    max-width: calc(100% - 250px); 
+    margin-left: auto; 
   }
 }
