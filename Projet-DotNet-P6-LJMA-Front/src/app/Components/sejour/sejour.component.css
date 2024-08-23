@@ -1,9 +1,7 @@
 #sejour {
-  width: fit-content;
-  height: fit-content;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: 'Poppins', sans-serif;
 
   .card {
@@ -53,7 +51,7 @@
       margin: 0;
       position: relative;
       left: 265px;
-      bottom: 205px;
+      bottom: 220px;
       text-align: center;
       font-size: 13px;
       width: 50%;
@@ -72,6 +70,62 @@
       p {
         font-size: 11px;
         color: #DDEBE2;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+  #sejour {
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px 0;
+
+    .card {
+      width: 90%;
+      height: auto;
+      margin: 0 0 20px 0;
+      display: flex;
+      flex-direction: column;
+
+      .card-img {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px 10px 0 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px 10px 0 0;
+        }
+
+        .card-title-desc {
+          margin-top: -80px;
+          margin-left: 10px;
+
+          .title {
+            font-size: 18px;
+          }
+
+          .desc {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .card-infos {
+        position: static;
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+
+        p {
+          font-size: 12px;
+        }
       }
     }
   }
