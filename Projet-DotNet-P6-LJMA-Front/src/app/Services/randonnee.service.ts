@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from "./api/api.service";
 import { Observable, catchError, throwError } from "rxjs";
-import { Randonnee } from "../Models/randonnee";
+import { Randonnee } from "../Models/randonnee.model";
 import { environment } from "../Environments/environment";
 
 @Injectable({
