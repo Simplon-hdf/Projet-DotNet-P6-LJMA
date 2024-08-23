@@ -1,4 +1,4 @@
-﻿using Projet_DotNet_P6_LJMA.Infrastructure.Data;
+﻿using Projet_DotNet_P6_LJMA.Data;
 using Projet_DotNet_P6_LJMA.Modules.AuthentificationModule.Repositories;
 using Projet_DotNet_P6_LJMA.Modules.AuthentificationModule.Services;
 using Projet_DotNet_P6_LJMA.Modules.PostModule.Repositories;

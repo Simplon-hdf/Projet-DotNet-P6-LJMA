@@ -1,4 +1,4 @@
-﻿using Projet_DotNet_P6_LJMA.Infrastructure.Data;
+﻿using Projet_DotNet_P6_LJMA.Data;
 
 namespace Projet_DotNet_P6_LJMA.Infrastructure.Configurations
 {
