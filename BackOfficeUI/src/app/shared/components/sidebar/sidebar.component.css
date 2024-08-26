@@ -1,3 +1,16 @@
+/* Styles pour le bouton hamburger */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -49,9 +62,9 @@
 }
 
 .sidebar ul li a.active {
-  color: #333; /* Couleur du texte */
-  background-color: #e0e0e0; /* Couleur de fond */
-  border-radius: 5px; /* Arrondir les coins */
+  color: #333;
+  background-color: #e0e0e0;
+  border-radius: 5px;
 }
 
 .logout {
@@ -68,3 +81,4 @@
 .logout a:hover {
   color: #007bff;
 }
+

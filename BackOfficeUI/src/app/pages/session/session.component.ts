@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { Theme } from '../../models/theme.model';
 import { ThemeService } from '../../services/theme.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-session',
   standalone: true,
@@ -30,7 +32,8 @@ export class SessionComponent implements OnInit {
 
   constructor(
     private sessionService: SessionService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -158,4 +161,9 @@ export class SessionComponent implements OnInit {
       }
     });
   }
+
+  viewSessionDetails(sessionId: string): void {
+    this.router.navigate(['/details-session', sessionId]);
+  }
 }
+

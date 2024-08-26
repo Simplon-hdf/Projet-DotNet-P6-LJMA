@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SidebarComponent } from "../../shared/components/sidebar/sidebar.component";
+import { LoginService } from '../../auth/login/login.service';
 
 @Component({
   selector: 'app-general',
@@ -9,6 +10,7 @@ import { SidebarComponent } from "../../shared/components/sidebar/sidebar.compon
   styleUrl: './general.component.css'
 })
 export class GeneralComponent {
+ 	loginService = inject(LoginService);
   randonnees = [
     {
       id: 1,

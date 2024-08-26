@@ -52,7 +52,7 @@ table {
   border-spacing: 0 10px; 
   margin: 0 auto;
   width: 100%; 
-  max-width: 100%; /* Prend toute la largeur disponible */
+  max-width: 100%;
 }
 
 th, td {
@@ -164,9 +164,9 @@ button[type="submit"]:hover {
 
 /* Styles pour les boutons généraux */
 button {
-  padding: 6px 12px;
   margin-right: 5px;
-  background-color: #4CAF50;
+  padding: 6px 12px;
+  background-color: #45a049;
   color: white;
   border: none;
   border-radius: 4px;
@@ -181,14 +181,31 @@ button:hover {
 /* Responsive Styles */
 @media (max-width: 768px) {
   th, td {
-      padding: 8px; /* Réduit l'espacement sur les petits écrans */
+      padding: 8px;
   }
 
   .modal-content {
-      width: 90%; /* Augmente la largeur de la modale sur les petits écrans */
+      width: 90%;
   }
 
   .search-bar {
-      max-width: 100%; /* Assure que la barre de recherche prend toute la largeur disponible */
+      max-width: 100%; 
   }
+}
+
+svg {
+  margin: 5px;
+}
+
+svg:hover {
+  fill: #45a049;
+  cursor: pointer; 
+}
+
+.deleteIcon {
+  fill: red
+}
+
+.deleteIcon:hover {
+  fill: rgb(212, 0, 0);
 }
