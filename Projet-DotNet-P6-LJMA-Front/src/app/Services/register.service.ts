@@ -19,7 +19,7 @@ export interface CredentialsOnToken {
 })
 export class RegisterService {
   private http = inject(HttpClient);
-  private BASE_URL = 'http://localhost:5101';
+  private BASE_URL = 'http://localhost:5101'
   user = signal<CredentialsOnToken | null | undefined>(undefined);
 
   getToken(): string | null {
@@ -49,6 +49,7 @@ export class RegisterService {
       tap((result: any) => {
         localStorage.setItem('token', result.token);
         this.user.set(this.decodedToken());
+        console.table(result);
       }),
       map((result: any) => {
         return this.user();
