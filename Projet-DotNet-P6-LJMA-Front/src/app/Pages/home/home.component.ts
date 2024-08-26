@@ -18,20 +18,10 @@ import { LoginService } from '../../Services/login.service';
 })
 export class HomeComponent implements OnInit {
   loginService = inject(LoginService);
-  
+
   constructor(private scroller: ViewportScroller, private route : Router) {}
 
   ngOnInit() {
     this.route.navigate(["/"]);
-  }
-
-  goDown() {
-    const about = document.getElementById("about");
-    // @ts-ignore
-    about.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest"
-    })
   }
 }

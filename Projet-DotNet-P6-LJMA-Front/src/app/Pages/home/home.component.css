@@ -84,6 +84,7 @@ app-header {
   justify-content: center;
   align-items: center;
 
+
   .container {
     height: 100%;
 
@@ -131,7 +132,7 @@ app-header {
   }
 
   #sejours {
-    height: 100vh; /* Maintient la hauteur à 100vh */
+    height: 100vh;
 
     .container {
       display: flex;
