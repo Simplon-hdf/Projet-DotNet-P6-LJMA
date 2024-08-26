@@ -10,7 +10,4 @@
     <input matInput type="password" formControlName="motdepasse" />
   </mat-form-field>
   <button mat-flat-button [disabled]="loginFormGroup.invalid">Se connecter</button>
-  @if (invalidCredentials) {
-    <mat-error>Invalid credentials</mat-error>
-  }
 </form>
