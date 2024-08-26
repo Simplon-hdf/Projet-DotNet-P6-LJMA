@@ -156,7 +156,7 @@ export class RandonneeComponent implements OnInit {
 
   /* Fin Section Edit de randonnee */
 
-  // Suppression d'un randonnee
+  // Suppression d'une randonnee
 
   deleteRandonnee(id: string): void {
     const deleteObservable = this.randonneeService.deleteRandonnee(id);

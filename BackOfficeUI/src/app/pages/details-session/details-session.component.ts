@@ -53,15 +53,18 @@ export class DetailsSessionComponent implements OnInit {
     });
   }
 
+  // Récupération de l'ensemble des réservations
   loadAllReservations(): void {
     this.reserverService.getAllReservations().subscribe(reservations => {
-      console.log('Toutes les réservations:', reservations);
+      // console.log('Toutes les réservations:', reservations);
+      // Filtrage des réservations pour ne garder que celles lié a la session séléctionnée
       this.reservations = reservations.filter(r => r.sessionId === this.sessionId);
-      console.log('Réservations filtrées:', this.reservations);
+      // console.log('Réservations filtrées:', this.reservations);
       this.loadUsersForReservations();
     });
   }
 
+// Récupération des utilisateurs liés aux réservations
 loadUsersForReservations(): void {
   if (this.reservations.length > 0) {
     const userIds = this.reservations.map(r => r.utilisateurId);
@@ -70,7 +73,7 @@ loadUsersForReservations(): void {
         ...user,
         nb_participant: this.reservations[index]?.nb_participant
       }));
-      console.log('Utilisateurs chargés:', this.users);
+      // console.log('Utilisateurs chargés:', this.users);
     });
   } else {
     console.log('Aucune réservation trouvée pour cette session');
