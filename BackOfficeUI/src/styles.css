@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+  --primary-1: #0c2a09;
+  --primary-2: #766117;
+  --primary-3: #956922;
+
+  --secondary-1: #606c38;
+  --secondary-2: #283618;
+  --secondary-3: #fefae0;
+  --secondary-4: #dda15e;
+  --secondary-5: #bc6c25;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.content {
+  flex-grow: 1;
+}

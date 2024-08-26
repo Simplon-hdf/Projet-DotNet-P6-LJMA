@@ -1,0 +1,21 @@
+<div class="sidebar">
+    <h2>Marche & Deviens</h2>
+    @if (loginService.user()) {
+      <p>{{loginService.user()?.unique_name}} {{loginService.user()?.given_name}}</p>
+    } @else {
+      <p>Panel Admin</p>
+    }
+    <ul>
+      <li><a routerLink="/general" routerLinkActive="active">Général</a></li>
+      <li><a routerLink="/randonnee" routerLinkActive="active">Randonnée</a></li>
+      <li><a routerLink="/" routerLinkActive="active">Vlog</a></li>
+      <li><a routerLink="/utilisateur" routerLinkActive="active">Utilisateur</a></li>
+    </ul>
+    <div class="logout">
+      @if(loginService.user()) {
+        <a (click)="logout()" routerLinkActive="active">Se Déconnecter</a>
+      } @else {
+        <a (click)="login()" routerLinkActive="active">Se Connecter</a>
+      }
+    </div>
+</div>

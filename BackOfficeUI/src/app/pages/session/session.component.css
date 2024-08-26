@@ -1,0 +1,164 @@
+/* Styles pour le sous-tableau des sessions */
+.sub-table {
+    width: 90%; 
+    margin: 10px auto; 
+    border-collapse: separate; 
+    border-spacing: 0 10px; 
+}
+
+/* En-têtes du sous-tableau */
+.sub-table th {
+    padding: 12px; 
+    text-align: left; 
+    border-bottom: 2px solid #37d4b0; 
+}
+
+/* Cellules du sous-tableau */
+.sub-table td {
+    padding: 12px; 
+    background-color: #e9f5ff; 
+}
+
+/* Lignes du sous-tableau */
+.sub-table tr {
+    border-radius: 10px; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Styles pour les coins des cellules */
+.sub-table td:first-child {
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 10px; 
+}
+
+.sub-table td:last-child {
+    border-top-right-radius: 10px; 
+    border-bottom-right-radius: 10px; 
+}
+
+.sub-table button {
+    padding: 6px 12px;
+    margin-right: 5px;
+    background-color: #37d4b0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sub-table button:hover {
+    background-color: #2eb595;
+}
+
+/* Styles de la modale */
+.modal {
+    display: block; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* Contenu de la modale */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    border-radius: 10px; 
+    width: 80%; 
+    max-width: 600px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Style pour la croix de fermeture */
+.close {
+    color: #aaa; 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+.close:hover,
+.close:focus {
+    color: black; 
+    text-decoration: none; 
+}
+
+/* Styles pour le formulaire dans la modale */
+form {
+    display: flex; 
+    flex-direction: column; 
+}
+
+label {
+    margin: 10px 0 5px; 
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin-bottom: 15px; 
+}
+
+button[type="submit"] {
+    background-color: #37d4b0; 
+    color: white; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+button[type="submit"]:hover {
+    background-color: #2eb595; 
+}
+
+.spacing {
+    margin: 15px 0;
+}
+
+/* Styles pour le bouton d'ajout */
+.button-container {
+    text-align: center; 
+}
+
+.button-container button {
+    padding: 6px 12px; 
+    margin-right: 5px; 
+    background-color: #37d4b0; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.button-container button:hover {
+    background-color: #2eb595; 
+}
+
+svg {
+    margin: 5px;
+  }
+  
+  svg:hover {
+    fill: #2eb595;
+    cursor: pointer; 
+  }
+  
+  .deleteIcon {
+    fill: red
+  }
+  
+  .deleteIcon:hover {
+    fill: rgb(212, 0, 0);
+  }

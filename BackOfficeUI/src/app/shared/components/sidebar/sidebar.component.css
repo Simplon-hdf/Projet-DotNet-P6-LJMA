@@ -1,0 +1,84 @@
+/* Styles pour le bouton hamburger */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  text-align: center; 
+}
+
+.sidebar h2 {
+  margin-top: 15px;
+  margin-bottom: -2px;
+  font-size: large;
+  font-weight: bold;
+
+}
+
+.sidebar p {
+  margin-top: 0; 
+  margin-bottom: 30%; 
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; 
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  display: inline-block; 
+  padding: 5px 8px;; 
+  border-radius: 5px; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  color: #333; 
+  background-color: #e0e0e0; 
+}
+
+.sidebar ul li a.active {
+  color: #333;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.logout {
+  text-align: center; 
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
+.logout a {
+  text-decoration: none;
+  color: #333;
+}
+
+.logout a:hover {
+  color: #007bff;
+}
+

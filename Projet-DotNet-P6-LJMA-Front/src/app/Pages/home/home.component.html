@@ -1,0 +1,26 @@
+<app-header></app-header>
+<section id="home">
+  <div class="filter"></div>
+  <div class="container">
+    <div class="title">
+      @if (loginService.user()){
+        <h2 style="position: absolute; top: -10px;">Bienvenue {{loginService.user()!.unique_name}} {{loginService.user()!.given_name}}</h2>
+      }
+      <h1>MARCHE<br>& DEVIENS</h1>
+    </div>
+    <div class="button-learn-more">
+      <button routerLink="/about"><a>En savoir plus</a></button>
+    </div>
+  </div>
+</section>
+
+<section id="sejours">
+  <div class="container">
+    <div class="title">
+      <h1>Nos Séjours</h1>
+    </div>
+    <div class="card-content">
+      <app-sejour></app-sejour>
+    </div>
+  </div>
+</section>

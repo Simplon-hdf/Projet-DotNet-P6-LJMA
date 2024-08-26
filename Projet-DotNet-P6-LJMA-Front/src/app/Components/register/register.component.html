@@ -1,0 +1,24 @@
+<form class="container" (submit)="register()" [formGroup]="registerFormGroup">
+  <h3>Inscription</h3>
+  <mat-form-field>
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="nom">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Prénom</mat-label>
+    <input matInput formControlName="prenom">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Téléphone</mat-label>
+    <input matInput formControlName="telephone">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Mot de passe</mat-label>
+    <input matInput type="password" formControlName="motdepasse" />
+  </mat-form-field>
+  <button mat-flat-button [disabled]="registerFormGroup.invalid">S'inscrire</button>
+</form>

@@ -1,0 +1,50 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+app-sidebar {
+  width: 250px;
+  transition: transform 0.3s;
+  height: 100%;
+
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .app-container.sidebar-open .main-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+  }
+
+  app-sidebar {
+    width: 250px; 
+    flex-shrink: 0;
+  }
+  
+  .content {
+    flex-grow: 1;
+    overflow-y: auto;
+    flex-direction: column; 
+    max-width: calc(100% - 250px); 
+    margin-left: auto; 
+  }
+}

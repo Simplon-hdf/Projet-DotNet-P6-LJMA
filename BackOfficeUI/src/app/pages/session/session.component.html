@@ -1,0 +1,97 @@
+<div class="button-container" style="text-align: right;">
+  <button (click)="toggleSessionsVisibility()">
+    {{ areSessionsVisible ? 'X' : 'Afficher les Sessions' }}
+  </button>
+</div>
+
+@if(areSessionsVisible){
+  <div>
+    <table class="sub-table">
+      <thead>
+        <tr>
+          <th>Nom de la Session</th>
+          <th>Date Début</th>
+          <th>Date Fin</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(session of sessions; track session.id){
+          <tr>
+            <td>{{ session.nom }}</td>
+            <td>{{ session.date_debut }}</td>
+            <td>{{ session.date_fin }}</td>
+            <td>
+              <!-- Boutons d'action -->
+
+              <svg (click)="editSession(session)" width="19" height="17" viewBox="0 0 19 17" fill="#37d4b0" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.1107 2.70615L16.048 5.64351C16.1718 5.76725 16.1718 5.96916 16.048 6.0929L8.93583 13.2051L5.9138 13.5405C5.50999 13.5861 5.16806 13.2442 5.21365 12.8404L5.54907 9.81833L12.6613 2.70615C12.785 2.5824 12.9869 2.5824 13.1107 2.70615ZM18.3862 1.96041L16.797 0.37124C16.302 -0.123747 15.4977 -0.123747 14.9994 0.37124L13.8466 1.52404C13.7229 1.64779 13.7229 1.84969 13.8466 1.97344L16.784 4.91079C16.9077 5.03454 17.1096 5.03454 17.2334 4.91079L18.3862 3.758C18.8812 3.25975 18.8812 2.4554 18.3862 1.96041ZM12.5049 11.2707V14.5858H2.08416V4.16506H9.56759C9.67179 4.16506 9.76949 4.12272 9.84439 4.05108L11.147 2.74848C11.3945 2.50099 11.2186 2.0809 10.8702 2.0809H1.56312C0.700147 2.0809 0 2.78105 0 3.64402V15.1069C0 15.9699 0.700147 16.67 1.56312 16.67H13.026C13.889 16.67 14.5891 15.9699 14.5891 15.1069V9.96813C14.5891 9.61969 14.169 9.44709 13.9215 9.69133L12.6189 10.9939C12.5473 11.0688 12.5049 11.1665 12.5049 11.2707Z"/>
+              </svg>
+              <svg (click)="viewSessionDetails(session.id!)" class="eye" width="25" height="18" viewBox="0 0 25 18" fill="#37d4b0" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24.849 8.36632C22.4952 3.77387 17.8355 0.666667 12.5 0.666667C7.1645 0.666667 2.50347 3.77604 0.151042 8.36675C0.0517548 8.56316 2.42113e-05 8.78015 2.42113e-05 9.00022C2.42113e-05 9.22029 0.0517548 9.43728 0.151042 9.63368C2.50477 14.2261 7.1645 17.3333 12.5 17.3333C17.8355 17.3333 22.4965 14.224 24.849 9.63325C24.9482 9.43684 25 9.21985 25 8.99978C25 8.77971 24.9482 8.56272 24.849 8.36632ZM12.5 15.25C11.2639 15.25 10.0555 14.8834 9.02769 14.1967C7.99988 13.5099 7.1988 12.5338 6.72575 11.3918C6.25271 10.2497 6.12893 8.99307 6.37009 7.78069C6.61125 6.5683 7.2065 5.45466 8.08058 4.58058C8.95466 3.7065 10.0683 3.11125 11.2807 2.87009C12.4931 2.62893 13.7497 2.75271 14.8918 3.22575C16.0338 3.6988 17.0099 4.49988 17.6967 5.52769C18.3834 6.55549 18.75 7.76387 18.75 9C18.7504 9.82087 18.589 10.6338 18.2751 11.3922C17.9611 12.1507 17.5008 12.8399 16.9203 13.4203C16.3399 14.0008 15.6507 14.4611 14.8922 14.7751C14.1338 15.089 13.3209 15.2504 12.5 15.25ZM12.5 4.83333C12.1281 4.83853 11.7586 4.89386 11.4015 4.99783C11.6958 5.39786 11.8371 5.89014 11.7996 6.38539C11.7622 6.88064 11.5485 7.34607 11.1973 7.69727C10.8461 8.04846 10.3806 8.26217 9.88539 8.29964C9.39014 8.3371 8.89786 8.19584 8.49783 7.90148C8.27004 8.74071 8.31116 9.63024 8.6154 10.4449C8.91964 11.2595 9.47169 11.9582 10.1938 12.4427C10.916 12.9271 11.7719 13.1729 12.641 13.1455C13.5102 13.118 14.3489 12.8187 15.039 12.2896C15.7291 11.7606 16.236 11.0284 16.4882 10.1962C16.7404 9.36396 16.7253 8.4736 16.445 7.65042C16.1647 6.82724 15.6333 6.11269 14.9256 5.60734C14.2179 5.10199 13.3696 4.83129 12.5 4.83333Z"/>
+              </svg>
+              <svg class="deleteIcon" (click)="deleteSession(session.id!)" width="15" height="17" viewBox="0 0 15 17" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.0653 1.04188H10.1583L9.85223 0.433035C9.78739 0.30287 9.68753 0.193379 9.56386 0.116878C9.44019 0.0403765 9.29763 -9.85862e-05 9.15222 5.7084e-06H5.43077C5.28568 -0.000552038 5.14337 0.0397721 5.02014 0.116358C4.89692 0.192944 4.79775 0.302695 4.73402 0.433035L4.42797 1.04188H0.520937C0.382776 1.04188 0.250274 1.09676 0.152579 1.19446C0.0548843 1.29215 0 1.42466 0 1.56282L0 2.60469C0 2.74285 0.0548843 2.87536 0.152579 2.97305C0.250274 3.07074 0.382776 3.12563 0.520937 3.12563H14.0653C14.2035 3.12563 14.336 3.07074 14.4337 2.97305C14.5314 2.87536 14.5862 2.74285 14.5862 2.60469V1.56282C14.5862 1.42466 14.5314 1.29215 14.4337 1.19446C14.336 1.09676 14.2035 1.04188 14.0653 1.04188ZM1.73212 15.2049C1.75696 15.6016 1.93208 15.974 2.22182 16.2462C2.51155 16.5184 2.89413 16.6699 3.29167 16.67H11.2946C11.6921 16.6699 12.0747 16.5184 12.3644 16.2462C12.6542 15.974 12.8293 15.6016 12.8541 15.2049L13.5444 4.1675H1.04187L1.73212 15.2049Z"/>
+              </svg>
+            </td>
+          </tr>
+      }
+      </tbody>
+    </table>
+    <!-- Bouton pour ajouter une nouvelle session -->
+    <div class="button-container">
+      <button (click)="openAddSessionModal()">Ajouter une Session</button>
+    </div>
+  </div>
+}
+
+<!-- Modal AddSession -->
+<div *ngIf="isAddSessionModalOpen" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeAddSessionModal()">&times;</span>
+    <h3>Ajouter une Nouvelle Session</h3>
+    <form (ngSubmit)="addSession()">
+      <label for="newNom">Nom de la Session</label>
+      <input type="text" id="newNom" [(ngModel)]="newSession.nom" name="newNom" required>
+
+      <label for="newDateDebut">Date Début</label>
+      <input type="date" id="newDateDebut" [(ngModel)]="newSession.date_debut" name="newDateDebut" required>
+
+      <label for="newDateFin">Date Fin</label>
+      <input type="date" id="newDateFin" [(ngModel)]="newSession.date_fin" name="newDateFin" required>
+
+      <label for="newTheme">Thème</label>
+      <select id="newTheme" [(ngModel)]="newSession.themeId" name="newTheme" required>
+        <option *ngFor="let theme of themes" [value]="theme.id">{{ theme.nom }}</option>
+      </select>
+
+      <div class="spacing"></div>
+      
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+</div>
+<!-- Fin Modal AddSession -->
+
+<!-- Modal EditSession -->
+@if(isEditSessionModalOpen){
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeEditSessionModal()">&times;</span>
+      <h2>Modifier le Session</h2>
+      <form (ngSubmit)="saveSessionChanges()">
+        <label for="nom">Nom:</label>
+        <input type="text" id="desc" [(ngModel)]="selectedSession!.nom" name="nom">
+        
+        <label for="dateDebut">Date Début</label>
+        <input type="date" id="dateDebut" [(ngModel)]="selectedSession!.date_debut" name="date_debut">
+  
+        <label for="dateFin">Date Fin</label>
+        <input type="date" id="dateFin" [(ngModel)]="selectedSession!.date_fin" name="date_fin">
+
+        <button type="submit">Sauvegarder</button>
+      </form>
+    </div>
+  </div>
+}
+<!-- Fin Modal EditSession -->
