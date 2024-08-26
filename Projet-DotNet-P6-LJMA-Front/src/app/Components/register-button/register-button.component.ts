@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {Component, inject} from '@angular/core';
+import {Router, RouterLink} from "@angular/router";
+import {LoginService} from "../../Services/login.service";
 
 @Component({
   selector: 'app-register-button',
@@ -11,5 +12,10 @@ import {RouterLink} from "@angular/router";
   styleUrl: './register-button.component.css'
 })
 export class RegisterButtonComponent {
+  loginService = inject(LoginService);
+  router = inject(Router);
 
+  register(){
+    this.router.navigate(['signin']);
+  }
 }

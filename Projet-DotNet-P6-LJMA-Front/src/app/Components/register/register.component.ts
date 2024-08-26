@@ -51,6 +51,7 @@ export class RegisterComponent implements OnDestroy {
         .subscribe({
           next: (result) => {
             console.table(result);
+            this.router.navigate(['home']);
             if (result) {
               this.router.navigate(['home']);
             } else {
