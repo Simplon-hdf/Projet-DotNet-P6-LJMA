@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Projet_DotNet_P6_LJMA.Infrastructure.Data.Models
+namespace Projet_DotNet_P6_LJMA.Models
 {
     [Table("reserver")]
     public class Reserver

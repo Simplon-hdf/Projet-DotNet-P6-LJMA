@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Projet_DotNet_P6_LJMA.Infrastructure.Data.Models
+namespace Projet_DotNet_P6_LJMA.Models
 {
     [Table("randonnee")]
     public class Randonnee
@@ -23,7 +23,7 @@ namespace Projet_DotNet_P6_LJMA.Infrastructure.Data.Models
 
         [Column("image_rando"), MaxLength(2000)]
         public string Image { get; set; }
-        
+
         [Column("nb_nuit_rando")]
         public int Nb_nuit { get; set; }
 
