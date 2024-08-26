@@ -6,16 +6,16 @@ Ce projet vise à améliorer le site **Marche&Deviens**. Voici un aperçu des pr
 **Node** : Installation [ici](https://nodejs.org/en/download/package-manager).
 
 **Github** :
-* Cloner le projet ``git clone <url_du_repo_github>``.
-* Envoyer des modifications ``git push <remote> <branch>``.
-* Changer de branch ``git switch <nom_de_la_branch>``.
-* Récupéré des modifications ``git pull``.
+* Cloner le projet `git clone <url_du_repo_github>`.
+* Envoyer des modifications `git push <remote> <branch>`.
+* Changer de branch `git switch <nom_de_la_branch>`.
+* Récupéré des modifications `git pull`.
 
 **AngularJS** : 
-* installation ``npm install -g angular``. 
-* Création d'un projet ``ng new <nom_du_projet>``.
-* Création d'un component ``ng generate component <nom_du_component>``.
-* Création d'un service ``ng generate service <nom_du_service>``.
+* installation `npm install -g angular`. 
+* Création d'un projet `ng new <nom_du_projet>`.
+* Création d'un component `ng generate component <nom_du_component>`.
+* Création d'un service `ng generate service <nom_du_service>`.
 ***
 
 ## Documentation Front
@@ -29,7 +29,7 @@ Ce projet vise à améliorer le site **Marche&Deviens**. Voici un aperçu des pr
 *** 
 
 #### Menu burger : 
-* Nouveaux liens ajoutés : `"Nos Séjours"`, `"Galeries"`.
+* Nouveaux liens ajoutés : `"Nos Séjours"`, `"Galeries"`, `"Blog"`.
 * Boutons de connexion et d'inscription.
 * Couleurs :
   * Fond : `#DDEBE2`.
@@ -38,7 +38,7 @@ Ce projet vise à améliorer le site **Marche&Deviens**. Voici un aperçu des pr
     * Effet hover : Couleur verte `#448B5C`.
 ***
 
-#### Séction : Nos Séjours : 
+#### Nos Séjours : 
 * Présentation sous forme de cartes.
 * Contenu des cartes :
   * Image du lieu,
@@ -46,6 +46,9 @@ Ce projet vise à améliorer le site **Marche&Deviens**. Voici un aperçu des pr
   * Informations : Nombre de nuits, jours, limite de participants.
 * Fonctionnalité future : Lien vers les randonnées associées (via ID).
 ***
+
+### Galeries : 
+* Répertoire de photo et vlog (pas encore finaliser)
 
 ### Contributeur :
 * **Lefebvre Mathéo**
